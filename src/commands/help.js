@@ -20,6 +20,9 @@ export default class TagCommand extends Command {
       const name = `${module[0][0].toUpperCase()}${module[0].slice(1)}`
       const command = module[1]
 
+      const category = `${command.category.id[0].toUpperCase()}${
+        command.category.id.slice(1)}`
+
       const args = []
 
       for (const arg of command.args) {
@@ -32,7 +35,7 @@ export default class TagCommand extends Command {
 
       fields.push({
         name,
-        value: `Usage: ${usage}\n${command.description}`
+        value: `Usage: ${usage}\nCategory: ${category}\n${command.description}`
       })
     }
 
