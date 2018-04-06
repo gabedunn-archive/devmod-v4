@@ -1,0 +1,40 @@
+{
+  "name": "DevMod",
+  "version": "1.0.0",
+  "description": "Bot for moderating the DevCord server.",
+  "main": "src/index.js",
+  "license": "MIT",
+  "author": "Gabe Dunn (https://github.com/redxtech)",
+  "scripts": {
+    "build": "parcel build src/index.js -d dist -o devmod -t node --no-source-maps",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "env": "envup",
+    "lint": "eslint --ext .js src",
+    "lint:fix": "eslint --ext .js src --fix",
+    "start": "babel-node src/index.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "envup": "^1.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "nodemon": "^1.17.3",
+    "parcel-bundler": "^1.7.0"
+  },
+  "dependencies": {
+    "bufferutil": "^3.0.3",
+    "discord-akairo": "^7.5.4",
+    "discord.js": "^11.3.2",
+    "dotenv": "^5.0.1",
+    "erlpack": "^0.1.2",
+    "libsodium-wrappers": "^0.7.3",
+    "node-opus": "^0.2.7",
+    "sequelize": "^4.37.5",
+    "sqlite": "^2.9.1"
+  }
+}
