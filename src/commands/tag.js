@@ -8,6 +8,8 @@ export default class TagCommand extends Command {
   constructor () {
     super('tag', {
       aliases: ['tag'],
+      category: 'assistance',
+      description: 'Sends a preset text when called.',
       args: [
         {
           id: 'tag'

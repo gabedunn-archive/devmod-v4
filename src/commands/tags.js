@@ -8,7 +8,9 @@ import tags from '../tags'
 export default class TagCommand extends Command {
   constructor () {
     super('tags', {
-      aliases: ['tags', 'taglist']
+      aliases: ['tags', 'taglist'],
+      category: 'assistance',
+      description: 'List of Available Tags.'
     })
   }
 
