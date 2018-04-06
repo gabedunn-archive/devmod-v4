@@ -6,12 +6,12 @@
   "license": "MIT",
   "author": "Gabe Dunn (https://github.com/redxtech)",
   "scripts": {
-    "build": "parcel build src/index.js -d dist -o devmod -t node --no-source-maps",
-    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "parcel build index.js -d dist -o devmod -t node --no-source-maps",
+    "dev": "nodemon --exec babel-node index.js",
     "env": "envup",
     "lint": "eslint --ext .js src",
     "lint:fix": "eslint --ext .js src --fix",
-    "start": "babel-node src/index.js"
+    "start": "babel-node index.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
