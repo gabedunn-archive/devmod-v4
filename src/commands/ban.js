@@ -33,7 +33,6 @@ export default class BanCommand extends Command {
   }
 
   // TODO: add proper try/catch for error handling
-  // TODO: add guild image to embed
   // noinspection JSMethodCanBeStatic
   async exec (message, args) {
     if (!args.member) {
@@ -65,6 +64,9 @@ export default class BanCommand extends Command {
       embed: {
         title: `You have been banned from ${message.guild.name}.`,
         color: colours.red,
+        thumbnail: {
+          url: message.guild.iconURL
+        },
         fields: [
           {
             name: 'Reason:',

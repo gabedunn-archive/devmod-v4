@@ -94,6 +94,9 @@ export default class WarnCommand extends Command {
           embed: {
             title: `You have received a warning on ${message.guild.name}.`,
             color,
+            thumbnail: {
+              url: message.guild.iconURL
+            },
             fields: [
               {
                 name: 'Reason:',
@@ -107,6 +110,9 @@ export default class WarnCommand extends Command {
             embed: {
               title: `You have been banned from ${message.guild.name}.`,
               color,
+              thumbnail: {
+                url: message.guild.iconURL
+              },
               fields: [
                 {
                   name: `Reason: ${reason} (${row.count} warnings).`,
