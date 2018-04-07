@@ -3,6 +3,9 @@ yarn.lock
 dist
 .cache
 package-lock.json
+devmod.sqlite
+devmod.db
+db
 ### Windows template
 # Windows thumbnail cache files
 Thumbs.db

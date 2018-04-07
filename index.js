@@ -1,7 +1,8 @@
 import { AkairoClient } from 'discord-akairo'
 import { join } from 'path'
+import sqlite from 'sqlite-async'
 
-import { botToken, ownerID, prefix } from './src/config'
+import { botToken, dbFile, ownerID, prefix } from './src/config'
 
 const client = new AkairoClient({
   ownerID,
@@ -18,6 +19,23 @@ const client = new AkairoClient({
 const run = async () => {
   await client.login(botToken)
   console.log(`Logged in as ${client.user.tag}.`)
+
+  const db = await sqlite.open(dbFile)
+  await db.run('CREATE TABLE IF NOT EXISTS warnings (' +
+    'id INTEGER PRIMARY KEY, ' +
+    'discord_id TEXT NOT NULL,' +
+    'reason TEXT NOT NULL,' +
+    '`date` DATE NOT NULL,' +
+    'mod_id TEXT NOT NULL)')
+  await db.run('CREATE TABLE IF NOT EXISTS points (' +
+    'id INTEGER PRIMARY KEY, ' +
+    'discord_id TEXT NOT NULL UNIQUE, ' +
+    'points INTEGER NOT NULL)')
+  // await db.close()
 }
+
+client.on('error', error => {
+  console.log(error)
+})
 
 run()
