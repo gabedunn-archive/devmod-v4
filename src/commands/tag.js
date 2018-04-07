@@ -24,9 +24,10 @@ export default class TagCommand extends Command {
   }
 
   // noinspection JSMethodCanBeStatic
-  exec (message, args) {
+  async exec (message, args) {
     let embed
     if (tags.hasOwnProperty(args.tag.toLowerCase())) {
+      await message.delete(1)
       embed = tags[args.tag.toLowerCase()]
     } else {
       embed = errorMessage('Tag Not Found', 'No tag with that name exists.')
