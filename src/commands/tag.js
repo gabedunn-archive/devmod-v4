@@ -27,11 +27,11 @@ export default class TagCommand extends Command {
   async exec (message, args) {
     let embed
     if (tags.hasOwnProperty(args.tag.toLowerCase())) {
-      await message.delete(1)
       embed = tags[args.tag.toLowerCase()]
+      await message.delete(1)
     } else {
       embed = errorMessage('Tag Not Found', 'No tag with that name exists.')
-      message.react('❌')
+      await message.react('❌')
     }
     embed.author = {
       name: message.member.user.username,
