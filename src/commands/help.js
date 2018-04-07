@@ -9,7 +9,9 @@ export default class TagCommand extends Command {
     super('help', {
       aliases: ['help'],
       category: 'assistance',
-      description: 'Sends a list of commands to be used with the bot.'
+      description: 'Sends a list of commands to be used with the bot.',
+      cooldown: 1000 * msgDeleteTime,
+      ratelimit: 1
     })
   }
 

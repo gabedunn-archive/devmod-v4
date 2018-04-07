@@ -10,7 +10,9 @@ export default class TagCommand extends Command {
     super('tags', {
       aliases: ['tags', 'taglist'],
       category: 'assistance',
-      description: 'List of Available Tags.'
+      description: 'List of Available Tags.',
+      cooldown: 1000 * msgDeleteTime,
+      ratelimit: 1
     })
   }
 
