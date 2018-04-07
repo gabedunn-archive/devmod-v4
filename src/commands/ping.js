@@ -1,4 +1,5 @@
 import { Command } from 'discord-akairo'
+import colours from '../colours'
 
 export default class PingCommand extends Command {
   constructor () {
@@ -10,12 +11,24 @@ export default class PingCommand extends Command {
   }
 
   exec (message) {
-    return message.util.send('Pong!').then(sent => {
+    const embed = {
+      title: 'Pong!',
+      color: colours.blue
+    }
+    return message.util.send({embed}).then(sent => {
       const timeDiff = (sent.editedAt || sent.createdAt) -
         (message.editedAt || message.createdAt)
-      const text = `RTT: ${timeDiff}ms\nHeartbeat: ${Math.round(
-        this.client.ping)}ms`
-      return message.util.send(`Pong!\n${text}`)
+      embed.fields = [
+        {
+          name: 'Round Trip Time:',
+          value: `${timeDiff}ms.`
+        },
+        {
+          name: 'Ping:',
+          value: `${Math.round(this.client.ping)}ms.`
+        }
+      ]
+      return message.util.send({embed})
     })
   }
 }
