@@ -33,8 +33,6 @@
     "dotenv": "^5.0.1",
     "erlpack": "^0.1.2",
     "libsodium-wrappers": "^0.7.3",
-    "node-opus": "^0.2.7",
-    "sequelize": "^4.37.5",
-    "sqlite": "^2.9.1"
+    "node-opus": "^0.2.7"
   }
 }

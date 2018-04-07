@@ -1,6 +1,7 @@
 import { Command } from 'discord-akairo'
 
 import colours from '../colours'
+import { errorMessage } from '../common'
 
 import tags from '../tags'
 
@@ -28,11 +29,7 @@ export default class TagCommand extends Command {
     if (tags.hasOwnProperty(args.tag.toLowerCase())) {
       embed = tags[args.tag.toLowerCase()]
     } else {
-      embed = {
-        title: 'Tag Not Found',
-        color: colours.red,
-        description: 'No tag with that name exists.'
-      }
+      embed = errorMessage('Tag Not Found', 'No tag with that name exists.')
       message.react('❌')
     }
     embed.author = {
