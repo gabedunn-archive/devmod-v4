@@ -48,6 +48,8 @@ export default class TagCommand extends Command {
       })
     }
 
+    await message.delete(1)
+
     const sent = await message.util.send({
       embed: {
         title: 'List of Commands',
@@ -59,7 +61,7 @@ export default class TagCommand extends Command {
         }
       }
     })
-    setTimeout(() => {
+    return setTimeout(() => {
       sent.delete(1)
     }, msgDeleteTime * 1000)
   }
