@@ -60,9 +60,6 @@ export default class TagCommand extends Command {
         name: message.member.user.username,
         icon_url: message.member.user.avatarURL
       }
-    }
-
-    if (message.channel.type !== 'dm') {
       const sent = await message.util.send({embed})
       return setTimeout(() => {
         sent.delete(1)

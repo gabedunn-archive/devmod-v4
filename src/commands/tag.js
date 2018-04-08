@@ -19,7 +19,8 @@ export default class TagCommand extends Command {
           id: 'member',
           type: 'member'
         }
-      ]
+      ],
+      channelRestriction: 'guild'
     })
   }
 
