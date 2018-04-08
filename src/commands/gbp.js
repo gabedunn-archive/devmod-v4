@@ -127,7 +127,7 @@ export default class GBPCommand extends Command {
         await message.delete(1)
         return message.util.send({embed})
       case 'add':
-        if (!message.member.permissions.has('BAN_MEMBERS')) {
+        if (!message.member.permissions.has('KICK_MEMBERS')) {
           await message.react('❌')
           return message.util.send({
             embed: errorMessage('No Permission',
@@ -148,7 +148,7 @@ export default class GBPCommand extends Command {
         embed.description = `${args.member} now has  ${newPoints} GBP ${boye}`
         return message.util.send({embed})
       case 'rm':
-        if (!message.member.permissions.has('BAN_MEMBERS')) {
+        if (!message.member.permissions.has('KICK_MEMBERS')) {
           await message.react('❌')
           return message.util.send({
             embed: errorMessage('No Permission',

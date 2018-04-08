@@ -17,8 +17,8 @@ export default class ListWarnsCommand extends Command {
           type: 'member'
         }
       ],
-      clientPermissions: ['BAN_MEMBERS'],
-      userPermissions: ['BAN_MEMBERS'],
+      clientPermissions: ['KICK_MEMBERS'],
+      userPermissions: ['KICK_MEMBERS'],
       channelRestriction: 'guild'
     })
   }

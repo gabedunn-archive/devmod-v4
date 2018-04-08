@@ -21,8 +21,8 @@ export default class ClearWarnsCommand extends Command {
           default: '*'
         }
       ],
-      clientPermissions: ['BAN_MEMBERS'],
-      userPermissions: ['BAN_MEMBERS'],
+      clientPermissions: ['KICK_MEMBERS'],
+      userPermissions: ['KICK_MEMBERS'],
       channelRestriction: 'guild'
     })
   }
