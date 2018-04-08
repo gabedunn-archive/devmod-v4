@@ -15,4 +15,5 @@ export const channels = {
   warn: process.env.CHANNEL_LOG_WARN,
   ban: process.env.CHANNEL_LOG_BAN
 }
+export const pointEmoji = process.env.POINTS_EMOJI
 export const statusInterval = process.env.STATUS_INTERVAL
