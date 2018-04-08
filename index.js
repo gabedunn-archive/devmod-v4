@@ -56,8 +56,4 @@ const run = async () => {
     'points INTEGER NOT NULL)')
 }
 
-client.on('error', error => {
-  console.log(error)
-})
-
 run()
