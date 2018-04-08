@@ -2,7 +2,7 @@ import { AkairoClient } from 'discord-akairo'
 import { join } from 'path'
 import sqlite from 'sqlite-async'
 
-import { botToken, dbFile, ownerID, prefix } from './src/config'
+import { botToken, dbFile, ownerID, prefix, statusInterval } from './src/config'
 
 const client = new AkairoClient({
   ownerID,
@@ -19,6 +19,29 @@ const client = new AkairoClient({
 const run = async () => {
   await client.login(botToken)
   console.log(`Logged in as ${client.user.tag}.`)
+  client.user.setActivity('.help')
+
+  const activities = [
+    'Counting GBP...',
+    'Trying to unban SWAT SEAL...',
+    'Spamming the DMs of a random user...'
+  ]
+
+  setInterval(async () => {
+    const activity = activities[Math.floor(Math.random() * activities.length)]
+    const newActivity = await client.user.setActivity(activity)
+    console.log(
+      `Set activity to '${newActivity.localPresence.game
+        ? newActivity.localPresence.game.name
+        : 'nothing'}'.`)
+    setTimeout(async () => {
+      const newActivity = await client.user.setActivity('.help')
+      console.log(
+        `Set activity to '${newActivity.localPresence.game
+          ? newActivity.localPresence.game.name
+          : 'nothing'}'.`)
+    }, 60000)
+  }, statusInterval * 60000)
 
   const db = await sqlite.open(dbFile)
   await db.run('CREATE TABLE IF NOT EXISTS warnings (' +
