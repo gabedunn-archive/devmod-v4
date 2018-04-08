@@ -54,7 +54,6 @@ const run = async () => {
     'id INTEGER PRIMARY KEY, ' +
     'discord_id TEXT NOT NULL UNIQUE, ' +
     'points INTEGER NOT NULL)')
-  // await db.close()
 }
 
 client.on('error', error => {
