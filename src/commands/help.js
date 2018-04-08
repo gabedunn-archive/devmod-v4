@@ -28,7 +28,7 @@ export default class TagCommand extends Command {
       const args = []
 
       for (const arg of command.args) {
-        args.push(`${arg.id} - ${arg.type}`)
+        args.push(`${arg.id}`)
       }
 
       const usage = args.length === 0
@@ -48,21 +48,27 @@ export default class TagCommand extends Command {
       })
     }
 
-    await message.delete(1)
+    const embed = {
+      title: 'List of Commands',
+      color: colours.blue,
+      fields
+    }
 
-    const sent = await message.util.send({
-      embed: {
-        title: 'List of Commands',
-        color: colours.blue,
-        fields,
-        author: {
-          name: message.member.user.username,
-          icon_url: message.member.user.avatarURL
-        }
+    if (message.channel.type !== 'dm') {
+      await message.delete(1)
+      embed.author = {
+        name: message.member.user.username,
+        icon_url: message.member.user.avatarURL
       }
-    })
-    return setTimeout(() => {
-      sent.delete(1)
-    }, msgDeleteTime * 1000)
+    }
+
+    if (message.channel.type !== 'dm') {
+      const sent = await message.util.send({embed})
+      return setTimeout(() => {
+        sent.delete(1)
+      }, msgDeleteTime * 1000)
+    } else {
+      return message.util.send({embed})
+    }
   }
 }
