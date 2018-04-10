@@ -43,7 +43,13 @@ export default class BanCommand extends Command {
           fields: [
             {
               name: 'Channel:',
-              value: message.channel.toString()
+              value: message.channel.toString(),
+              inline: true
+            },
+            {
+              name: 'Member:',
+              value: message.member.toString(),
+              inline: true
             }
           ],
           footer: {
