@@ -20,50 +20,35 @@ export default class TagCommand extends Command {
   async exec (message) {
     try {
       const fields = []
-
-      try {
-        for (const [key, val] of Object.entries(tags)) {
-          fields.push({name: val.title, value: `${prefix}tag ${key}`})
-        }
-      } catch (e) {
-        console.log(`Error fetching tags: ${e}`)
-        return null
+      for (const [key, val] of Object.entries(tags)) {
+        fields.push({name: val.title, value: `${prefix}tag ${key}`})
       }
-
       if (fields.length === 0) {
         fields.push({
           name: 'No Tags',
           value: 'There are currently no tags added.'
         })
       }
-
       const embed = {
         title: 'List of Tags',
         color: colours.blue,
         fields
       }
-
-      try {
-        if (message.channel.type !== 'dm') {
-          await message.delete(1)
-          embed.author = {
-            name: message.member.user.username,
-            icon_url: message.member.user.avatarURL
-          }
-          const sent = await message.util.send({embed})
-          return setTimeout(() => {
-            sent.delete(1)
-          }, msgDeleteTime * 1000)
-        } else {
-          return message.util.send({embed})
+      if (message.channel.type !== 'dm') {
+        await message.delete(1)
+        embed.author = {
+          name: message.member.user.username,
+          icon_url: message.member.user.avatarURL
         }
-      } catch (e) {
-        console.log(`Error sending tag list: ${e}`)
-        return null
+        const sent = await message.util.send({embed})
+        return setTimeout(() => {
+          sent.delete(1)
+        }, msgDeleteTime * 1000)
+      } else {
+        return message.util.send({embed})
       }
     } catch (e) {
       console.log(`Tags command failed: ${e}`)
-      console.log(`Line Number: ${e.lineNumber}`)
       return null
     }
   }

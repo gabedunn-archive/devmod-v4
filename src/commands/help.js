@@ -19,33 +19,27 @@ export default class TagCommand extends Command {
   async exec (message) {
     try {
       const fields = []
-      try {
-        for (const module of message.client.commandHandler.modules) {
-          const name = capitalize(module[0])
-          const command = module[1]
+      for (const module of message.client.commandHandler.modules) {
+        const name = capitalize(module[0])
+        const command = module[1]
 
-          const category = capitalize(command.category.id)
+        const category = capitalize(command.category.id)
 
-          const args = []
+        const args = []
 
-          for (const arg of command.args) {
-            args.push(`${arg.id}`)
-          }
-
-          const usage = args.length === 0
-            ? `\`${prefix}${command.aliases[0]}\``
-            : `\`${prefix}${command.aliases[0]} <${args.join('> <')}>\``
-
-          fields.push({
-            name,
-            value: `Usage: ${usage}\nCategory: ${category}\n${command.description}`
-          })
+        for (const arg of command.args) {
+          args.push(`${arg.id}`)
         }
-      } catch (e) {
-        console.log(`Error looping through modules: ${e}`)
-        return null
-      }
 
+        const usage = args.length === 0
+          ? `\`${prefix}${command.aliases[0]}\``
+          : `\`${prefix}${command.aliases[0]} <${args.join('> <')}>\``
+
+        fields.push({
+          name,
+          value: `Usage: ${usage}\nCategory: ${category}\n${command.description}`
+        })
+      }
       if (fields.length === 0) {
         fields.push({
           name: 'No Commands',
@@ -59,27 +53,21 @@ export default class TagCommand extends Command {
         fields
       }
 
-      try {
-        if (message.channel.type !== 'dm') {
-          await message.delete(1)
-          embed.author = {
-            name: message.member.user.username,
-            icon_url: message.member.user.avatarURL
-          }
-          const sent = await message.util.send({embed})
-          return setTimeout(() => {
-            sent.delete(1)
-          }, msgDeleteTime * 1000)
-        } else {
-          return message.util.send({embed})
+      if (message.channel.type !== 'dm') {
+        await message.delete(1)
+        embed.author = {
+          name: message.member.user.username,
+          icon_url: message.member.user.avatarURL
         }
-      } catch (e) {
-        console.log(`Error sending message to user: ${e}`)
-        return null
+        const sent = await message.util.send({embed})
+        return setTimeout(() => {
+          sent.delete(1)
+        }, msgDeleteTime * 1000)
+      } else {
+        return message.util.send({embed})
       }
     } catch (e) {
       console.log(`Help command failed: ${e}`)
-      console.log(`Line Number: ${e.lineNumber}`)
       return null
     }
   }

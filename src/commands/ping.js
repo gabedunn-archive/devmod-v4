@@ -17,26 +17,26 @@ export default class PingCommand extends Command {
     }
     try {
       const sent = await message.util.send({embed})
+      try {
+        const timeDiff = (sent.editedAt || sent.createdAt) -
+          (message.editedAt || message.createdAt)
+        embed.fields = [
+          {
+            name: 'Round Trip Time:',
+            value: `${timeDiff}ms.`
+          },
+          {
+            name: 'Ping:',
+            value: `${Math.round(this.client.ping)}ms.`
+          }
+        ]
+        return message.util.send({embed})
+      } catch (e) {
+        console.log(`Error updating message: ${e}`)
+        return null
+      }
     } catch (e) {
       console.log(`Error sending initial message: ${e}`)
-      return null
-    }
-    try {
-      const timeDiff = (sent.editedAt || sent.createdAt) -
-        (message.editedAt || message.createdAt)
-      embed.fields = [
-        {
-          name: 'Round Trip Time:',
-          value: `${timeDiff}ms.`
-        },
-        {
-          name: 'Ping:',
-          value: `${Math.round(this.client.ping)}ms.`
-        }
-      ]
-      return message.util.send({embed})
-    } catch (e) {
-      console.log(`Error updating message: ${e}`)
       return null
     }
   }
