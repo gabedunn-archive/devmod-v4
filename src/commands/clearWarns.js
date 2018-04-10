@@ -39,7 +39,7 @@ export default class ClearWarnsCommand extends Command {
           return message.util.send({embed})
         }
       } catch (e) {
-        console.log(`Error sending member not found message: ${e.message}`)
+        console.log(`Error sending member not found message: ${e}`)
         return null
       }
 
@@ -62,7 +62,7 @@ export default class ClearWarnsCommand extends Command {
         }
       } catch (e) {
         console.log(
-          `Error getting amount of sending amount error message: ${e.message}`)
+          `Error getting amount of sending amount error message: ${e}`)
       }
 
       try {
@@ -94,7 +94,7 @@ export default class ClearWarnsCommand extends Command {
           })
         }
       } catch (e) {
-        console.log(`Error setting reply: ${e.message}`)
+        console.log(`Error setting reply: ${e}`)
         return null
       }
 
@@ -111,10 +111,10 @@ export default class ClearWarnsCommand extends Command {
           return reply()
         }
       } catch (e) {
-        console.log(`Error deleting warning from database: ${e.message}`)
+        console.log(`Error deleting warning from database: ${e}`)
       }
     } catch (e) {
-      console.log(`Clear Warns command failed: ${e.message}`)
+      console.log(`Clear Warns command failed: ${e}`)
       console.log(`Line Number: ${e.lineNumber}`)
       return null
     }

@@ -31,7 +31,7 @@ export default class BanCommand extends Command {
           return message.util.send({embed})
         }
       } catch (e) {
-        console.log(`Error sending no message message: ${e.message}`)
+        console.log(`Error sending no message message: ${e}`)
         return null
       }
 
@@ -65,7 +65,7 @@ export default class BanCommand extends Command {
         return null
       }
     } catch (e) {
-      console.log(`Report command failed: ${e.message}`)
+      console.log(`Report command failed: ${e}`)
       console.log(`Line Number: ${e.lineNumber}`)
       return null
     }

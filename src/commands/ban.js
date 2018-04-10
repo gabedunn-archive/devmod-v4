@@ -43,7 +43,7 @@ export default class BanCommand extends Command {
           return message.util.send({embed})
         }
       } catch (e) {
-        console.log(`Error sending member not found message: ${e.message}`)
+        console.log(`Error sending member not found message: ${e}`)
         return null
       }
       try {
@@ -54,7 +54,7 @@ export default class BanCommand extends Command {
           return message.util.send({embed})
         }
       } catch (e) {
-        console.log(`Error sending reason not specified message: ${e.message}`)
+        console.log(`Error sending reason not specified message: ${e}`)
         return null
       }
       try {
@@ -66,7 +66,7 @@ export default class BanCommand extends Command {
           return message.util.send({embed})
         }
       } catch (e) {
-        console.log(`Error sending can't ban member message: ${e.messsage}`)
+        console.log(`Error sending can't ban member message: ${e}`)
         return null
       }
 
@@ -120,7 +120,7 @@ export default class BanCommand extends Command {
           reason: args.reason
         })
       } catch (e) {
-        console.log(`Error sending messages and banning user: ${e.messsage}`)
+        console.log(`Error sending messages and banning user: ${e}`)
         return null
       }
 
@@ -128,11 +128,11 @@ export default class BanCommand extends Command {
         const db = await sqlite.open(dbFile)
         return db.run('DELETE FROM `warnings` WHERE `discord_id` = ?', user.id)
       } catch (e) {
-        console.log(`Error deleting entries from database: ${e.messsage}`)
+        console.log(`Error deleting entries from database: ${e}`)
         return null
       }
     } catch (e) {
-      console.log(`Ban command failed: ${e.message}`)
+      console.log(`Ban command failed: ${e}`)
       console.log(`Line Number: ${e.lineNumber}`)
       return null
     }
