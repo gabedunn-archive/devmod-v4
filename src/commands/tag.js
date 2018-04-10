@@ -17,10 +17,10 @@ export default class TagCommand extends Command {
         },
         {
           id: 'member',
-          type: 'member'
+          type: 'user'
         }
-      ],
-      channelRestriction: 'guild'
+      ]
+      // channelRestriction: 'guild'
     })
   }
 
@@ -30,16 +30,21 @@ export default class TagCommand extends Command {
       let embed
       if (tags.hasOwnProperty(args.tag.toLowerCase())) {
         embed = tags[args.tag.toLowerCase()]
-        await message.delete(1)
+        if (message.channel.type !== 'dm') {
+          await message.delete(1)
+        }
       } else {
         embed = errorMessage('Tag Not Found', 'No tag with that name exists.')
         await message.react('❌')
       }
+      const user = message.member ? message.member.user : message.author
       embed.author = {
-        name: message.member.user.username,
-        icon_url: message.member.user.avatarURL
+        name: user.username,
+        icon_url: user.avatarURL
       }
-      if (args.member) {
+      if (message.channel.type === 'dm') {
+        return message.util.send({embed})
+      } else if (args.member) {
         return message.util.send(args.member, {embed})
       } else {
         return message.util.send({embed})
