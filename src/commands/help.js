@@ -43,6 +43,7 @@ export default class TagCommand extends Command {
         }
       } catch (e) {
         console.log(`Error looping through modules: ${e}`)
+        return null
       }
 
       if (fields.length === 0) {
@@ -74,10 +75,12 @@ export default class TagCommand extends Command {
         }
       } catch (e) {
         console.log(`Error sending message to user: ${e}`)
+        return null
       }
     } catch (e) {
       console.log(`Help command failed: ${e}`)
       console.log(`Line Number: ${e.lineNumber}`)
+      return null
     }
   }
 }

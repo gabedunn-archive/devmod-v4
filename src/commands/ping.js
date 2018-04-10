@@ -19,6 +19,7 @@ export default class PingCommand extends Command {
       const sent = await message.util.send({embed})
     } catch (e) {
       console.log(`Error sending initial message: ${e}`)
+      return null
     }
     try {
       const timeDiff = (sent.editedAt || sent.createdAt) -
@@ -36,6 +37,7 @@ export default class PingCommand extends Command {
       return message.util.send({embed})
     } catch (e) {
       console.log(`Error updating message: ${e}`)
+      return null
     }
   }
 }
