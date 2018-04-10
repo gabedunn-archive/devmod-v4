@@ -15,19 +15,27 @@ export default class PingCommand extends Command {
       title: 'Pong!',
       color: colours.blue
     }
-    const sent = await message.util.send({embed})
-    const timeDiff = (sent.editedAt || sent.createdAt) -
-      (message.editedAt || message.createdAt)
-    embed.fields = [
-      {
-        name: 'Round Trip Time:',
-        value: `${timeDiff}ms.`
-      },
-      {
-        name: 'Ping:',
-        value: `${Math.round(this.client.ping)}ms.`
-      }
-    ]
-    return message.util.send({embed})
+    try {
+      const sent = await message.util.send({embed})
+    } catch (e) {
+      console.log(`Error sending initial message: ${e}`)
+    }
+    try {
+      const timeDiff = (sent.editedAt || sent.createdAt) -
+        (message.editedAt || message.createdAt)
+      embed.fields = [
+        {
+          name: 'Round Trip Time:',
+          value: `${timeDiff}ms.`
+        },
+        {
+          name: 'Ping:',
+          value: `${Math.round(this.client.ping)}ms.`
+        }
+      ]
+      return message.util.send({embed})
+    } catch (e) {
+      console.log(`Error updating message: ${e}`)
+    }
   }
 }
