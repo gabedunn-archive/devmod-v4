@@ -157,7 +157,7 @@ export default class GBPCommand extends Command {
                   points = row.points
                 }
               })
-            newPoints = points + args.points
+            newPoints = points + (Number.isInteger(args.points ? args.points : 1))
             await db.run('INSERT OR REPLACE INTO `points` (`discord_id`,' +
               ' `points`) VALUES' +
               ' (?, ?)', args.member.user.id, newPoints)
@@ -179,7 +179,7 @@ export default class GBPCommand extends Command {
                   points = row.points
                 }
               })
-            newPoints = points - args.points
+            newPoints = points - (Number.isInteger(args.points ? args.points : 1))
             await db.run('INSERT OR REPLACE INTO `points` (`discord_id`,' +
               ' `points`) VALUES' +
               ' (?, ?)', args.member.user.id, newPoints)
@@ -195,8 +195,8 @@ export default class GBPCommand extends Command {
             }
             await db.run('INSERT OR REPLACE INTO `points` (`discord_id`,' +
               ' `points`) VALUES' +
-              ' (?, ?)', args.member.user.id, args.points)
-            embed.description = `${args.member} now has  ${args.points} GBP ${boye}`
+              ' (?, ?)', args.member.user.id, (Number.isInteger(args.points ? args.points : 0)))
+            embed.description = `${args.member} now has  ${(Number.isInteger(args.points ? args.points : 0))} GBP ${boye}`
             return message.util.send({embed})
           case 'help':
             embed.fields = [
