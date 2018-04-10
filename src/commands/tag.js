@@ -20,7 +20,6 @@ export default class TagCommand extends Command {
           type: 'user'
         }
       ]
-      // channelRestriction: 'guild'
     })
   }
 

@@ -4,7 +4,6 @@ import colours from '../colours'
 
 import { errorMessage } from '../common'
 import {
-  channels,
   dbFile,
   msgDeleteTime,
   pointEmoji,
