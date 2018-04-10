@@ -34,7 +34,6 @@ export default class WarnCommand extends Command {
     })
   }
 
-  // TODO: add proper try/catch for error handling
   // noinspection JSMethodCanBeStatic
   async exec (message, args) {
     try {
