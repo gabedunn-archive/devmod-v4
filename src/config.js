@@ -18,3 +18,4 @@ export const channels = {
 }
 export const pointEmoji = process.env.POINTS_EMOJI
 export const statusInterval = process.env.STATUS_INTERVAL
+export const pointsTopCount = process.env.POINTS_TOP_COUNT

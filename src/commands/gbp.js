@@ -3,7 +3,13 @@ import sqlite from 'sqlite-async'
 import colours from '../colours'
 
 import { errorMessage } from '../common'
-import { channels, dbFile, msgDeleteTime, pointEmoji } from '../config'
+import {
+  channels,
+  dbFile,
+  msgDeleteTime,
+  pointEmoji,
+  pointsTopCount
+} from '../config'
 
 export default class GBPCommand extends Command {
   constructor () {
@@ -56,14 +62,17 @@ export default class GBPCommand extends Command {
       case 'top':
         const topUsers = []
         count = 0
-        await db.each('SELECT * FROM `points` ORDER BY `points` DESC LIMIT 3',
-          (err, row) => {
+        await db.each('SELECT * FROM `points` ORDER BY `points` DESC LIMIT ?',
+          pointsTopCount, (err, row) => {
             if (!err) {
-              const {user} = message.guild.member(row.discord_id)
-              topUsers.push({
-                name: `#${++count}: ${user.tag}.`,
-                value: `${row.points} GBP ${boye}`
-              })
+              const member = message.guild.member(row.discord_id)
+              if (member !== null) {
+                const {user} = member
+                topUsers.push({
+                  name: `#${++count}: ${user.tag}.`,
+                  value: `${row.points} GBP ${boye}`
+                })
+              }
             }
           })
         if (count === 0) {
@@ -83,13 +92,16 @@ export default class GBPCommand extends Command {
             }
           })
         await db.each('SELECT * FROM `points` ORDER BY' +
-          ' `points` ASC LIMIT 3', (err, row) => {
+          ' `points` ASC LIMIT ?', pointsTopCount, (err, row) => {
           if (!err) {
-            const {user} = message.guild.member(row.discord_id)
-            bottomUsers.push({
-              name: `#${users - ++count}: ${user.tag}.`,
-              value: `${row.points} GBP ${boye}`
-            })
+            const member = message.guild.member(row.discord_id)
+            if (member !== null) {
+              const {user} = member
+              bottomUsers.push({
+                name: `#${users - ++count}: ${user.tag}.`,
+                value: `${row.points} GBP ${boye}`
+              })
+            }
           }
         })
         if (count === 0) {
@@ -167,6 +179,19 @@ export default class GBPCommand extends Command {
           ' `points`) VALUES' +
           ' (?, ?)', args.member.user.id, newPoints)
         embed.description = `${args.member} now has  ${newPoints} GBP ${boye}`
+        return message.util.send({embed})
+      case 'set':
+        if (!message.member.permissions.has('KICK_MEMBERS')) {
+          await message.react('❌')
+          return message.util.send({
+            embed: errorMessage('No Permission',
+              'You are not allowed to use that command.')
+          })
+        }
+        await db.run('INSERT OR REPLACE INTO `points` (`discord_id`,' +
+          ' `points`) VALUES' +
+          ' (?, ?)', args.member.user.id, args.points)
+        embed.description = `${args.member} now has  ${args.points} GBP ${boye}`
         return message.util.send({embed})
       case 'help':
         embed.fields = [
