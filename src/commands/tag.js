@@ -26,22 +26,38 @@ export default class TagCommand extends Command {
 
   // noinspection JSMethodCanBeStatic
   async exec (message, args) {
-    let embed
-    if (tags.hasOwnProperty(args.tag.toLowerCase())) {
-      embed = tags[args.tag.toLowerCase()]
-      await message.delete(1)
-    } else {
-      embed = errorMessage('Tag Not Found', 'No tag with that name exists.')
-      await message.react('❌')
-    }
-    embed.author = {
-      name: message.member.user.username,
-      icon_url: message.member.user.avatarURL
-    }
-    if (args.member) {
-      return message.util.send(args.member, {embed})
-    } else {
-      return message.util.send({embed})
+    try {
+      let embed
+      try {
+        if (tags.hasOwnProperty(args.tag.toLowerCase())) {
+          embed = tags[args.tag.toLowerCase()]
+          await message.delete(1)
+        } else {
+          embed = errorMessage('Tag Not Found', 'No tag with that name exists.')
+          await message.react('❌')
+        }
+      } catch (e) {
+        console.log(`Error selecting tag: ${e}`)
+        return null
+      }
+      try {
+        embed.author = {
+          name: message.member.user.username,
+          icon_url: message.member.user.avatarURL
+        }
+        if (args.member) {
+          return message.util.send(args.member, {embed})
+        } else {
+          return message.util.send({embed})
+        }
+      } catch (e) {
+        console.log(`Error sending tag: ${e}`)
+        return null
+      }
+    } catch (e) {
+      console.log(`Tag command failed: ${e}`)
+      console.log(`Line Number: ${e.lineNumber}`)
+      return null
     }
   }
 }
