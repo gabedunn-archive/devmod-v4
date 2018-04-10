@@ -29,17 +29,18 @@ export default class TagCommand extends Command {
           value: 'There are currently no tags added.'
         })
       }
+      const user = message.member ? message.member.user : message.author
       const embed = {
         title: 'List of Tags',
         color: colours.blue,
-        fields
+        fields,
+        author: {
+          name: user.username,
+          icon_url: user.avatarURL
+        }
       }
       if (message.channel.type !== 'dm') {
         await message.delete(1)
-        embed.author = {
-          name: message.member.user.username,
-          icon_url: message.member.user.avatarURL
-        }
         const sent = await message.util.send({embed})
         return setTimeout(() => {
           sent.delete(1)
