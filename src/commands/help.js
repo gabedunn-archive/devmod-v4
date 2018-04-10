@@ -4,6 +4,8 @@ import { msgDeleteTime, prefix } from '../config'
 import { capitalize } from '../common'
 import colours from '../colours'
 
+// TODO: add args.member - send to user in dm if tagged
+
 export default class TagCommand extends Command {
   constructor () {
     super('help', {
@@ -47,18 +49,20 @@ export default class TagCommand extends Command {
         })
       }
 
+      const user = message.member ? message.member.user : message.author
+
       const embed = {
         title: 'List of Commands',
         color: colours.blue,
-        fields
+        fields,
+        author: {
+          name: user.username,
+          icon_url: user.avatarURL
+        }
       }
 
       if (message.channel.type !== 'dm') {
         await message.delete(1)
-        embed.author = {
-          name: message.member.user.username,
-          icon_url: message.member.user.avatarURL
-        }
         const sent = await message.util.send({embed})
         return setTimeout(() => {
           sent.delete(1)
