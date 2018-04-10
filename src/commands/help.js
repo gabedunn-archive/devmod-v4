@@ -4,21 +4,25 @@ import { msgDeleteTime, prefix } from '../config'
 import { capitalize } from '../common'
 import colours from '../colours'
 
-// TODO: add args.member - send to user in dm if tagged
-
 export default class TagCommand extends Command {
   constructor () {
     super('help', {
       aliases: ['help'],
       category: 'assistance',
       description: 'Sends a list of commands to be used with the bot.',
+      args: [
+        {
+          id: 'member',
+          type: 'user'
+        }
+      ],
       cooldown: 1000 * msgDeleteTime,
       ratelimit: 1
     })
   }
 
   // noinspection JSMethodCanBeStatic
-  async exec (message) {
+  async exec (message, args) {
     try {
       const fields = []
       for (const module of message.client.commandHandler.modules) {
@@ -63,10 +67,16 @@ export default class TagCommand extends Command {
 
       if (message.channel.type !== 'dm') {
         await message.delete(1)
-        const sent = await message.util.send({embed})
-        return setTimeout(() => {
-          sent.delete(1)
-        }, msgDeleteTime * 1000)
+        if (!args.member) {
+          const sent = await message.util.send({embed})
+          return setTimeout(() => {
+            sent.delete(1)
+          }, msgDeleteTime * 1000)
+        } else {
+          const member = message.guild.member(args.member.id)
+          const dm = await member.createDM()
+          return dm.send({embed})
+        }
       } else {
         return message.util.send({embed})
       }
