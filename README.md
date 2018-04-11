@@ -113,7 +113,8 @@ Any user is able to use tags and list tags.
 bot will tag the user when sending the message.
 
 `.tags` will show a list of tags that will be deleted after 10 seconds.
-> Tags commands will work in DMs with the bot.
+
+> Tags commands can be used in DMs.
 
 ### Good Boye Points
 Any user can see the top/bottom lists, their own GBP score, and that of
@@ -142,11 +143,15 @@ Anyone can use this command.
 `.help` will send a message with a list of commands and how to use them.
 The message will be deleted after 10 seconds.
 
+> Help command can be used in DMs.
+
 ### Ping
 Anyone can use this command.
 
 `.ping` will send a message to the chat with the ping and round trip
 of the bot at the time.
+
+> Ping command can be used in DMs.
 
 ## Future Ideas
  - Add configurable permission levels for commands.
