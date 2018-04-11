@@ -65,7 +65,7 @@ not have to have a window open for it.
 Now the bot is ready for use!
 
 > Just a quick note - the tags in src/tags.js and the activities in
-src/index.js may not be specific to all servers, so make sure to check
+src/activities.js may not be specific to all servers, so make sure to check
 those out before running the bot.
 
 ## Features & Usage
