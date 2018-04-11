@@ -27,7 +27,7 @@ export default class GBPCommand extends Command {
         },
         {
           id: 'points',
-          type: 'number',
+          type: 'integer',
           default: 1
         }
       ],
@@ -156,11 +156,12 @@ export default class GBPCommand extends Command {
                   points = row.points
                 }
               })
-            newPoints = points + (Number.isInteger(args.points ? args.points : 1))
+            newPoints = points + (args.points)
             await db.run('INSERT OR REPLACE INTO `points` (`discord_id`,' +
               ' `points`) VALUES' +
               ' (?, ?)', args.member.user.id, newPoints)
             embed.description = `${args.member} now has  ${newPoints} GBP ${boye}`
+            await message.delete(1)
             return message.util.send({embed})
           case 'rm':
             if (!message.member.permissions.has('KICK_MEMBERS')) {
@@ -178,11 +179,12 @@ export default class GBPCommand extends Command {
                   points = row.points
                 }
               })
-            newPoints = points - (Number.isInteger(args.points ? args.points : 1))
+            newPoints = points - args.points
             await db.run('INSERT OR REPLACE INTO `points` (`discord_id`,' +
               ' `points`) VALUES' +
               ' (?, ?)', args.member.user.id, newPoints)
             embed.description = `${args.member} now has  ${newPoints} GBP ${boye}`
+            await message.delete(1)
             return message.util.send({embed})
           case 'set':
             if (!message.member.permissions.has('KICK_MEMBERS')) {
@@ -193,9 +195,9 @@ export default class GBPCommand extends Command {
               })
             }
             await db.run('INSERT OR REPLACE INTO `points` (`discord_id`,' +
-              ' `points`) VALUES' +
-              ' (?, ?)', args.member.user.id, (Number.isInteger(args.points ? args.points : 0)))
-            embed.description = `${args.member} now has  ${(Number.isInteger(args.points ? args.points : 0))} GBP ${boye}`
+              ' `points`) VALUES (?, ?)', args.member.user.id, args.points)
+            embed.description = `${args.member} now has  ${args.points} GBP ${boye}`
+            await message.delete(1)
             return message.util.send({embed})
           case 'help':
             embed.fields = [
