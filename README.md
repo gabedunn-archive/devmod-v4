@@ -109,7 +109,7 @@ was sent from.
 ### Tags
 Any user is able to use tags and list tags.
 
-`.tag <tag> [<user>]` will call up a tag, and if <user> us specified,
+`.tag <tag> [<user>]` will call up a tag, and if `<user>` is specified,
 bot will tag the user when sending the message.
 
 `.tags` will show a list of tags that will be deleted after 10 seconds.
