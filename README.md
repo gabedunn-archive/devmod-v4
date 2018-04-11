@@ -13,7 +13,7 @@ want, and give it a profile picture if you would like. Once you have
 done that, you can click on create app. Scroll down to the "Bot"
 section and click on "Create a Bot User". Once you confirm this, the bot
 section will expand and you will be able to get a token. Click to reveal
-that, and keep the token safe. It what allows the bot to log in to
+that, and keep the token safe. It's what allows the bot to log in to
 discord.
 ### Inviting the bot to your server
 Now you will need to scroll up to the OAuth2 URL generator. Click on
@@ -153,4 +153,3 @@ of the bot at the time.
  - Add configuration for whether to delete warns on a ban.
  - Add unbanning users command.
  - Add option to prevent certain user from using report command.
- - Add about command to show what this bot does.
