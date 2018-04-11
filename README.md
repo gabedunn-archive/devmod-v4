@@ -153,3 +153,4 @@ of the bot at the time.
  - Add configuration for whether to delete warns on a ban.
  - Add unbanning users command.
  - Add option to prevent certain user from using report command.
+ - Add about command to show what this bot does.
