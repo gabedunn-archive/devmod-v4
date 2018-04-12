@@ -113,5 +113,124 @@ export default {
     description: 'This is a very nice outline on the general technologies' +
     ' recommended for the path of your choosing. Use the as an outline, and' +
     ' not as the sole source of authority. Make your own decisions as well.'
+  },
+  nice: {
+    title: 'Nice',
+    color: colours.blue,
+    image: {url: 'https://cdn.discordapp.com/attachments/287200463382642689/433326230495035412/1447912710960.jpg'}
+  },
+  editor: {
+    title: 'IDEs & Text Editors',
+    color: colours.blue,
+    description: 'There are many different ways to edit code, from code' +
+    ' editors to Integrated Development Environments ("IDEs"). Here are some' +
+    ' differences between the two and some examples of each:',
+    fields: [
+      {
+        name: 'IDEs',
+        value: 'IDEs (Integrated Development Environment) are programs that' +
+        ' include a code editor, but also integrations with various other' +
+        ' development tools (linters, version control,' +
+        ' intellisense/autocomplete, automatic refactoring, database' +
+        ' management, etc.).'
+      },
+      {
+        name: 'Code Editors',
+        value: 'Code editors are text editors that usually include syntax' +
+        ' highlighting, simple project management, and other helpful code' +
+        ' editing tools.'
+      },
+      {
+        name: 'WebStorm/PHPStorm (or any other JetBrains Product)',
+        value: 'These IDEs, as they have a full suite of tools for' +
+        ' development. Additionally they have a plugin system for anything' +
+        ' that they do not automatically include.'
+      },
+      {
+        name: 'Visual Studio',
+        value: 'Visual studio is a full IDE made by microsoft. It works well' +
+        ' with .NET based languages, as they are made by the same people.' +
+        ' They also include a plugin system.'
+      },
+      {
+        name: 'NetBeans',
+        value: 'I honestly don\'t know much about NetBeans, having never' +
+        ' used it. If you know more make a PR on the DevMod repo. I do know' +
+        ' that it is a Java IDE.'
+      },
+      {
+        name: 'Atom',
+        value: 'Atom is a code editor based on web technology. It\'s made by' +
+        ' GitHub, and has a massive community, with plugins for everything.'
+      },
+      {
+        name: 'VS Code',
+        value: 'VS Code is another editor based off of web technology, but' +
+        ' is better optimized and runs faster. This is built by microsoft' +
+        ' and has a large set of plugins as well.'
+      },
+      {
+        name: 'Sublime Text',
+        value: 'Sublime text starts off as a nice small and fast editor.' +
+        ' It\'s the fastest text editor that I\'ve seen. There is also a' +
+        ' wide selection of plugins.'
+      },
+      {
+        name: 'Vim',
+        value: 'Vim is a command line text editor with plugins that can do' +
+        ' pretty much anything. It is largely popular, but has a learning' +
+        ' curve before you can be productive in it.'
+      },
+      {
+        name: 'Brackets',
+        value: 'Brackets is also based on web tech, and has a live reload' +
+        ' feature that allows you to view your website live. Many other' +
+        ' editors have this feature, but few work as smoothly as this one.'
+      }
+    ]
+  },
+  framework: {
+    title: 'Frameworks (& Libraries)',
+    color: colours.green,
+    description: 'There is a large debate as to which framework is the best' +
+    ' for your webapp, and this is just an overview of the top contenders.',
+    fields: [
+      {
+        name: 'Vue',
+        value: 'Vue is a web framework that is easy to learn and use while' +
+        ' being quite powerful. It has been described as taking the best' +
+        ' from both React and Angular, and combining them. They have a large' +
+        ' community, and it\'s quite fun to use. It has separation of' +
+        ' concerns while being all in the same file, and has a large' +
+        ' community of people and plugins. There are projects like ream and' +
+        ' nuxt for SSR, and it\'s lightweight (smaller file than jQuery).' +
+        ' Vue also has nativescript-vue and weex to write mobile apps using' +
+        ' the same Vue syntax.'
+      },
+      {
+        name: 'React',
+        value: 'React is not a framework, and is rather a library. It is' +
+        ' backed by Facebook, and has a lot of useful features. It uses JSX,' +
+        ' which is writing your HTML (or XML, actually) in javascript, and' +
+        ' makes for a bit of a learning curve, but in the short time it' +
+        ' takes to learn it\'s interesting to use. React also has React' +
+        ' native which allows mobile development using the same syntax and' +
+        ' application logic as your rect webapp.'
+      },
+      {
+        name: 'Angular 5',
+        value: 'I do not know as much about Angular as I do Vue and React,' +
+        ' (please make a PR if you have more knowledge), I do know that to' +
+        ' use Angular, it\'s almost required to use typescript. Angular is a' +
+        ' full MVC, so it provided the entire suite of tools including' +
+        ' routing, state management, etc. This does lead to a more' +
+        ' opinionated way of doing things, but makes making decisions a lot' +
+        ' easier.'
+      }
+    ],
+    footer: {
+      text: 'My personal recommendation is Vue but definitely try out the' +
+      ' others and use what you prefer.'
+    }
   }
 }
