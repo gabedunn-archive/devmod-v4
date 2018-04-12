@@ -37,16 +37,18 @@ const run = async () => {
   }, statusInterval * 60000)
 
   const db = await sqlite.open(dbFile)
-  await db.run('CREATE TABLE IF NOT EXISTS warnings (' +
-    'id INTEGER PRIMARY KEY, ' +
-    'discord_id TEXT NOT NULL,' +
-    'reason TEXT NOT NULL,' +
-    '`date` DATE NOT NULL,' +
-    'mod_id TEXT NOT NULL)')
-  await db.run('CREATE TABLE IF NOT EXISTS points (' +
-    'id INTEGER PRIMARY KEY, ' +
-    'discord_id TEXT NOT NULL UNIQUE, ' +
-    'points INTEGER NOT NULL)')
+  await db.run('CREATE TABLE IF NOT EXISTS warnings (`
+    id INTEGER PRIMARY KEY,
+    discord_id TEXT NOT NULL,
+    reason TEXT NOT NULL,
+    date DATE NOT NULL,
+    mod_id TEXT NOT NULL
+  )`)
+  await db.run('CREATE TABLE IF NOT EXISTS points (`
+    id INTEGER PRIMARY KEY,
+    discord_id TEXT NOT NULL UNIQUE,
+    points INTEGER NOT NULL
+  )`)
 }
 
 run()
