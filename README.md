@@ -5,7 +5,7 @@ This was originally made to moderate the DevCord discord community, but
 has nothing that you need to be a developer to use.
 
 ## Setup
-### Creating the bot user
+### Step 1 - Creating the bot user
 The first thing that you will need to do it go to the
 [Discord Developers](https://discordapp.com/developers/applications/me)
 page, where you can create a new app. You can name the bot whatever you
@@ -15,7 +15,7 @@ section and click on "Create a Bot User". Once you confirm this, the bot
 section will expand and you will be able to get a token. Click to reveal
 that, and keep the token safe. It's what allows the bot to log in to
 discord.
-### Inviting the bot to your server
+### Step 2 - Inviting the bot to your server
 Now you will need to scroll up to the OAuth2 URL generator. Click on
 that and it should open a new tab with some options. Make sure that
 under "scope" bot is selected, and select Administrator (This is to make
@@ -24,7 +24,7 @@ Once you have that selected, click on copy in the field that has the URL
 and paste that into your browser. You will see a list of servers that
 you have administrator permissions on, and once you select one, you can
 click authorize and the bot will join the server.
-### Set up where the bot is hosted
+### Step 3 - Set up where the bot is hosted
 This bot runs on node, so you will have to have that installed. Their
 website is [here](https://nodejs.org). Once you have that installed, you
 need to clone the bot. To do this, you can use git command line and the
@@ -34,7 +34,7 @@ your command line and `cd` into the folder you just cloned/unzipped.
 Run `npm install` to install all of the dependencies and then `npm
 install -g pm2` to be able to run the bot in the background. Now that
 you have everything set up, you need to set up the config.
-### Configuring the bot
+### Step 4 - Configuring the bot
 This part is easy. Just type in `npm run env` and it will ask you some
 questions.
 
@@ -55,6 +55,7 @@ Option | Default | Description
 `STATUS_INTERVAL` | `5` | Amount in minutes of time between changing the bot's status.
 `POINTS_TOP_COUNT` | `10` | Amount of users to show in Good Boye Points top and bottom commands.
 
+### Step 5 - Running the bot
 Now that you have all of these options set up, you can run the bot. This
 is very simple. If you want to just run it on your computer while
 keeping the command line window open, just run `npm run start`, and it
