@@ -4,7 +4,7 @@ import colours from '../colours'
 import { errorMessage } from '../common'
 import { channels } from '../config'
 
-export default class BanCommand extends Command {
+export default class ReportCommand extends Command {
   constructor () {
     super('report', {
       aliases: ['report'],
