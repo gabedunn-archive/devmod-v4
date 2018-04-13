@@ -2,7 +2,7 @@ import { Command } from 'discord-akairo'
 
 import colours from '../colours'
 import { prefix } from '../config'
-import approvedRoles from './approvedRoles'
+import approvedRoles from '../approvedRoles'
 
 export default class RolesCommand extends Command {
   constructor () {

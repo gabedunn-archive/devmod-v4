@@ -143,6 +143,18 @@ a user. If no amount is specified, 1 is used.
 
 `.gbp help` will show how to use the GBP system.
 
+### Prune
+Anyone with MANAGE_MESSAGES permission can use this command.
+
+`.prune [<amount>]` will remove the specified amount of commands from
+the current channel. If no number is specified, the default is 5.
+
+### Stats & Users Commands
+These commands can be used by all users on the server.
+
+`.stats` & `.users` will show some stats & the amount of users on the
+server.
+
 ### Help
 Anyone can use this command.
 
