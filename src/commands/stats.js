@@ -33,7 +33,7 @@ export default class StatsCommand extends Command {
               value: `Members: ${guild.memberCount}.\n` +
               `Server was created at: ${moment(guild.createdAt).
                 format('YYYY/M/D')}.\n` +
-              `Num. of channels: ${ message.guild.channels.array().length}.\n` +
+              `Num. of channels: ${ message.guild.channels.size}.\n` +
               `Region: ${guild.region}.\n` +
               `AFK Timeout: ${guild.afkTimeout}s.\n`
             },
