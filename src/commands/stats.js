@@ -30,16 +30,17 @@ export default class StatsCommand extends Command {
           fields: [
             {
               name: guild.name,
-              value: `Members: ${guild.memberCount}.\n` +
+              value: `Members: ${guild.memberCount}\n` +
               `Server was created at: ${moment(guild.createdAt).
-                format('YYYY/M/D')}.\n` +
-              `Num. of channels: ${ message.guild.channels.size}.\n` +
-              `Region: ${guild.region}.\n` +
-              `AFK Timeout: ${guild.afkTimeout}s.\n`
+                format('YYYY/M/D')}\n` +
+              `Num. of channels: ${ guild.channels.array().
+                filter(channel => channel.type !== 'category').length}\n` +
+              `Region: ${guild.region}\n` +
+              `AFK Timeout: ${guild.afkTimeout}s\n`
             },
             {
               name: 'Bot Information',
-              value: `Uptime: ${uptime.hours()} hours, ${uptime.minutes()} mins, ${uptime.seconds()}s.`
+              value: `Uptime: ${uptime.hours()} hours, ${uptime.minutes()} mins, ${uptime.seconds()}s`
             }
           ]
         }
