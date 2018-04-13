@@ -21,6 +21,10 @@ export default class RolesCommand extends Command {
       const embed = {
         title: 'Available Roles',
         color: colours.blue,
+        author: {
+          name: message.member.user.username,
+          icon_url: message.member.user.avatarURL
+        },
         fields: []
       }
       for (const role of guild.roles.array()) {

@@ -23,6 +23,10 @@ export default class StatsCommand extends Command {
         embed: {
           title: 'Server Stats',
           color: colours.blue,
+          author: {
+            name: message.member.user.username,
+            icon_url: message.member.user.avatarURL
+          },
           fields: [
             {
               name: guild.name,
