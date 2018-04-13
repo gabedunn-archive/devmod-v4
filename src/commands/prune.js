@@ -1,7 +1,5 @@
 import { Command } from 'discord-akairo'
 
-import colours from '../colours'
-
 export default class PruneCommand extends Command {
   constructor () {
     super('print', {
