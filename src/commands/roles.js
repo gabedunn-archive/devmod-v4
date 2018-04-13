@@ -1,7 +1,7 @@
 import { Command } from 'discord-akairo'
 
 import colours from '../colours'
-import { prefix } from '../config'
+import { msgDeleteTime, prefix } from '../config'
 import approvedRoles from '../approvedRoles'
 
 export default class RolesCommand extends Command {
@@ -9,7 +9,9 @@ export default class RolesCommand extends Command {
     super('roles', {
       aliases: ['roles'],
       category: 'util',
-      description: 'Shows a list of self-assignable roles.'
+      description: 'Shows a list of self-assignable roles.',
+      cooldown: 1000 * msgDeleteTime,
+      ratelimit: 1
     })
   }
 
@@ -45,7 +47,10 @@ export default class RolesCommand extends Command {
           }
         ]
       }
-      return message.util.send({embed})
+      const sent = await message.util.send({embed})
+      return setTimeout(() => {
+        sent.delete(1)
+      }, msgDeleteTime * 1000)
     } catch (e) {
       console.log(`Error sending roles message: ${e}`)
       return null
