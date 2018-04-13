@@ -55,6 +55,10 @@ Option | Default | Description
 `STATUS_INTERVAL` | `5` | Amount in minutes of time between changing the bot's status.
 `POINTS_TOP_COUNT` | `10` | Amount of users to show in Good Boye Points top and bottom commands.
 
+Additionally, you will need to look in src/approvedRoles.js and add the
+names of all the roles you want people to be able to add to themselves
+via the role command.
+
 ### Step 5 - Running the bot
 Now that you have all of these options set up, you can run the bot. This
 is very simple. If you want to just run it on your computer while
@@ -65,9 +69,10 @@ not have to have a window open for it.
 
 Now the bot is ready for use!
 
-> Just a quick note - the tags in src/tags.js and the activities in
-src/activities.js may not be specific to all servers, so make sure to check
-those out before running the bot.
+> Just a quick note - the tags in src/tags.js, the activities in
+src/activities.js, and the roles in src/approvedRoles.js may not be
+specific to all servers, so make sure to check those out before running
+the bot.
 
 ## Features & Usage
 > For this I will show the commands assuming all of the config options
