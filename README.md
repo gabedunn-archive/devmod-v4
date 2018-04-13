@@ -165,6 +165,11 @@ These commands can be used by all users on the server.
 `.stats` & `.users` will show some stats & the amount of users on the
 server.
 
+### LMGTFY
+This command can be used by anyone.
+
+`.lmgtfy <query>` will send a link with the LMGTFY query.
+
 ### Help
 Anyone can use this command.
 
