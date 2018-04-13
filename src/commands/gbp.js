@@ -40,8 +40,8 @@ export default class GBPCommand extends Command {
     try {
       if (!args.command) {
         await message.react('❌')
-        const embed = errorMessage('No Command', 'You need to specify a' +
-          ' command to use.')
+        const embed = errorMessage('No Command Specified', 'You need to' +
+          ' specify a command to use.')
         return message.util.send({embed})
       }
       const embed = {
