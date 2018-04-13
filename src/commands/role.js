@@ -103,7 +103,7 @@ export default class RoleCommand extends Command {
           )
       }
     } catch (e) {
-      console.log(`Error sending roles message: ${e}`)
+      console.log(`Error sending role message: ${e}`)
       return null
     }
   }
