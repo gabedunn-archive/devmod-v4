@@ -57,7 +57,8 @@ Option | Default | Description
 
 Additionally, you will need to look in src/approvedRoles.js and add the
 names of all the roles you want people to be able to add to themselves
-via the role command.
+via the role command. This is case sensitive, so be sure to get it 100%
+accurate.
 
 ### Step 5 - Running the bot
 Now that you have all of these options set up, you can run the bot. This
@@ -142,6 +143,15 @@ a user. If no amount is specified, 1 is used.
 `.gbp set <user> [<amount>]` will do the same but will set the points.
 
 `.gbp help` will show how to use the GBP system.
+
+### Roles System
+Anyone can use the role command. It will add & remove roles that have been
+whitelisted in src/approvedRoles.js.
+
+`.role add <role>` will add the specified role, and
+
+`role rm <role>` will remove the specified role. Both of these are case
+sensitive.
 
 ### Prune
 Anyone with MANAGE_MESSAGES permission can use this command.
