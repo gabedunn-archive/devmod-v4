@@ -81,7 +81,7 @@ export default class BanCommand extends Command {
         embed: {
           color: colours.red,
           title: 'Ban',
-          description: 'User has been banned',
+          description: `${user} has been banned`,
           author: {
             name: message.member.user.username,
             icon_url: message.member.user.avatarURL
@@ -102,9 +102,16 @@ export default class BanCommand extends Command {
         days: time,
         reason: args.reason
       })
-      const db = await sqlite.open(dbFile)
-      return db.run('DELETE FROM `warnings` WHERE `discord_id` = ?',
-        user.id)
+      try {
+        const db = await sqlite.open(dbFile)
+        await db.run('DELETE FROM `warnings` WHERE `discord_id` = ?',
+          user.id)
+        return db.run('INSERT INTO `bans` (`discord_id`, `discord_name`,' +
+          ' `reason`, `date`, `mod_id`) VALUES (?, ?, ?, ?, ?)',
+          user.id, user.tag, args.reason, new Date(), message.member.user.id)
+      } catch (e) {
+        console.log(`Accessing DB failed: ${e}`)
+      }
     } catch (e) {
       console.log(`Ban command failed: ${e}`)
       return null

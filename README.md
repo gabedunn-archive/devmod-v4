@@ -106,6 +106,16 @@ command.
 If `--rm` is included, their messages from the past 7 days will be
 deleted.
 
+### Unbanning Users
+If a user has a role that allows them to ban user, they are able to use
+the unban command.
+
+`.unban <user> [<reason>]` will unban a user for the specified reason.
+If no reason is specified, "Unbanned via unban command." will be used.
+`<user>` is able to be something that can be parsed as a user: their
+case-sensitive tag (eg. `RedXTech#1234`), their case-sensitive username
+(eg. `RedXTech`), or their [unique ID]([Discord ID](https://goo.gl/fTsqkq)).
+
 ### Reporting users
 Any user can use the report command.
 
@@ -189,6 +199,5 @@ of the bot at the time.
 ## Future Ideas
  - Add configurable permission levels for commands.
  - Add configuration for whether to delete warns on a ban.
- - Add unbanning users command.
  - Add option to prevent certain user from using report command.
- - Make instructions a list as opposed to paragraph
+ - Add usage statistics to DB.
