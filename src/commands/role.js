@@ -55,6 +55,7 @@ export default class RoleCommand extends Command {
         case 'add':
           try {
             await message.member.addRole(role)
+            await message.delete(1)
             return message.util.send({
               embed: {
                 title: 'Role Added',
@@ -77,6 +78,7 @@ export default class RoleCommand extends Command {
         case 'rm':
           try {
             await message.member.removeRole(role)
+            await message.delete(1)
             return message.util.send({
               embed: {
                 title: 'Role Removed',
