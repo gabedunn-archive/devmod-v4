@@ -10,5 +10,21 @@ export default [
   'Graphic Designer',
   'Designer',
   'Senior',
-  'Junior'
+  'Junior',
+  'HTML',
+  'CSS',
+  'PHP',
+  'JavaScript',
+  'Python',
+  'Ruby',
+  'Perl',
+  'C++',
+  'C#',
+  'C',
+  'Java',
+  'Go',
+  'Swift',
+  'SQL',
+  'Off-Topic',
+  'SEO'
 ]
