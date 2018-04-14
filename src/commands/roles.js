@@ -16,7 +16,7 @@ export default class RolesCommand extends Command {
   }
 
   // noinspection JSMethodCanBeStatic
-  async exec (message, args) {
+  async exec (message) {
     try {
       await message.delete(1)
       const guild = message.guild
@@ -30,7 +30,7 @@ export default class RolesCommand extends Command {
         fields: []
       }
       for (const role of guild.roles.array()) {
-        if (approvedRoles.includes(role.name)) {
+        if (Object.values(approvedRoles).includes(role.name)) {
           embed.fields.push({
             name: role.name,
             value: `\`${prefix}role add|rm ${role.name}\``

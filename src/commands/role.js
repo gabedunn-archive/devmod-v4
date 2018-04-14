@@ -38,14 +38,15 @@ export default class RoleCommand extends Command {
           ' a role to use.')
         return message.util.send({embed})
       }
-      const role = guild.roles.find('name', args.role)
+      args.role = args.role.toLowerCase()
+      const role = guild.roles.find('name', approvedRoles[args.role])
       if (role === null) {
         await message.react('❌')
         const embed = errorMessage('Role Doesn\'t Exist', 'That role does' +
           ' not exist. Specify a valid role.')
         return message.util.send({embed})
       }
-      if (!approvedRoles.includes(args.role)) {
+      if (!Object.keys(approvedRoles).includes(args.role)) {
         await message.react('❌')
         const embed = errorMessage('Invalid Role', 'You are not allowed to' +
           ' add that role.')
@@ -60,7 +61,7 @@ export default class RoleCommand extends Command {
               embed: {
                 title: 'Role Added',
                 color: colours.green,
-                description: `Added ${args.role} to ${message.member.user.tag}`,
+                description: `Added ${approvedRoles[args.role]} to ${message.member.user.tag}`,
                 author: {
                   name: message.member.user.username,
                   icon_url: message.member.user.avatarURL
