@@ -24,16 +24,8 @@ const run = async () => {
     setInterval(async () => {
       const activity = activities[Math.floor(Math.random() * activities.length)]
       const newActivity = await client.user.setActivity(activity)
-      console.log(
-        `Set activity to '${newActivity.localPresence.game
-          ? newActivity.localPresence.game.name
-          : 'nothing'}'.`)
       setTimeout(async () => {
-        const newActivity = await client.user.setActivity('.help')
-        console.log(
-          `Set activity to '${newActivity.localPresence.game
-            ? newActivity.localPresence.game.name
-            : 'nothing'}'.`)
+        await client.user.setActivity('.help')
       }, 60000)
     }, statusInterval * 60000)
 
