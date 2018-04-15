@@ -232,5 +232,12 @@ export default {
       text: 'My personal recommendation is Vue but definitely try out the' +
       ' others and use what you prefer.'
     }
+  },
+  invite: {
+    title: 'Invite Link',
+    color: colours.blue,
+    url: 'https://discord.me/devcord',
+    description: 'You can invite people with' +
+    ' [this](https://discord.me/devcord) link.'
   }
 }
