@@ -9,6 +9,7 @@ export const reactionRolesMap = {
   'senior': {name: 'Senior', emoji: '🍉'},
   'junior': {name: 'Junior', emoji: '🍇'},
   'no-frontend': {name: 'No-Frontend', emoji: '🍓'},
+  'no-devops': {name: 'No-DevOps', emoji: '🧀'},
   'no-designer': {name: 'No-Designer', emoji: '🍈'},
   'no-php': {name: 'No-PHP', emoji: '🍒'},
   'no-python': {name: 'No-Python', emoji: '🍑'},
@@ -18,7 +19,7 @@ export const reactionRolesMap = {
   'no-go': {name: 'No-Go', emoji: '🍆'},
   'no-swift': {name: 'No-Swift', emoji: '🌶'},
   'no-sql': {name: 'No-SQL', emoji: '🌽'},
-  'np-seo': {name: 'No-SEO', emoji: '🍟'}
+  'no-seo': {name: 'No-SEO', emoji: '🍟'}
 }
 
 const rolesObject = {}
