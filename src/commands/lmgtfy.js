@@ -34,7 +34,11 @@ export default class LMGTFYCommand extends Command {
           title: 'LMGTFY',
           color: colours.blue,
           url: `https://lmgtfy.com/?q=${args.query.replace(/\s/g, '+')}`,
-          description: 'Here you go!'
+          description: 'Here you go!',
+          author: {
+            name: message.member.user.username,
+            icon_url: message.member.user.avatarURL
+          }
         }
       })
     } catch (e) {
