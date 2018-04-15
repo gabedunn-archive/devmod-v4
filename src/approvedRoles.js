@@ -17,7 +17,6 @@ export const reactionRolesMap = {
   'no-c#': {name: 'No-C#', emoji: '🍕'},
   'no-java': {name: 'No-Java', emoji: '🍅'},
   'no-go': {name: 'No-Go', emoji: '🍆'},
-  'no-swift': {name: 'No-Swift', emoji: '🌶'},
   'no-sql': {name: 'No-SQL', emoji: '🌽'},
   'no-seo': {name: 'No-SEO', emoji: '🍟'}
 }
