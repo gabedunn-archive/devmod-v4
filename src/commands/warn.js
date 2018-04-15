@@ -39,8 +39,8 @@ export default class WarnCommand extends Command {
     try {
       if (!args.member) {
         await message.react('❌')
-        const embed = errorMessage('Member Not Found', 'No member found with' +
-          ' that name.')
+        const embed = errorMessage('No Member Specified', 'You didn\'t' +
+          ' specify a member.')
         return message.util.send({embed})
       }
       if (!args.reason) {
