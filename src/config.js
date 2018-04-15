@@ -14,7 +14,8 @@ export const banMsgDelete = process.env.BAN_MSG_DELETE
 export const channels = {
   warn: process.env.CHANNEL_LOG_WARN,
   ban: process.env.CHANNEL_LOG_BAN,
-  report: process.env.CHANNEL_REPORT
+  report: process.env.CHANNEL_REPORT,
+  roles: process.env.CHANNEL_ROLES
 }
 export const pointEmoji = process.env.POINTS_EMOJI
 export const statusInterval = process.env.STATUS_INTERVAL

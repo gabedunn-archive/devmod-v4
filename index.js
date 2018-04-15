@@ -47,6 +47,10 @@ const run = async () => {
       'id INTEGER PRIMARY KEY, ' +
       'discord_id TEXT NOT NULL UNIQUE, ' +
       'points INTEGER NOT NULL)')
+    await db.run('CREATE TABLE IF NOT EXISTS settings (' +
+      'id INTEGER PRIMARY KEY, ' +
+      'key TEXT NOT NULL UNIQUE, ' +
+      'value TEXT NOT NULL)')
   } catch (e) {
     console.log(`Error running bot: ${e}`)
   }
