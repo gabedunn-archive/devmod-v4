@@ -73,3 +73,7 @@ const run = async () => {
 }
 
 run()
+
+process.on('uncaughtException', e => {
+  console.log(`Uncaught Exception: ${e}`)
+})
