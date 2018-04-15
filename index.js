@@ -4,6 +4,7 @@ import sqlite from 'sqlite-async'
 
 import { botToken, dbFile, ownerID, prefix, statusInterval } from './src/config'
 import activities from './src/activities'
+import { roleAdd, roleRm } from './src/reactionRoles'
 
 const client = new AkairoClient({
   ownerID,
@@ -28,6 +29,21 @@ const run = async () => {
         await client.user.setActivity('.help')
       }, 60000)
     }, statusInterval * 60000)
+
+    client.on('raw', async event => {
+      try {
+        const {d: data} = event
+        if (event.t === 'MESSAGE_REACTION_ADD') {
+          roleAdd(client, data.guild_id, data.message_id, data.user_id,
+            data.emoji.name)
+        } else if (event.t === 'MESSAGE_REACTION_REMOVE') {
+          roleRm(client, data.guild_id, data.message_id, data.user_id,
+            data.emoji.name)
+        }
+      } catch (e) {
+        console.log(`Error handling reaction: ${e}`)
+      }
+    })
 
     const db = await sqlite.open(dbFile)
     await db.run('CREATE TABLE IF NOT EXISTS warnings (' +

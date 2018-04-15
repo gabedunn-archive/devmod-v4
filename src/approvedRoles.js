@@ -1,7 +1,5 @@
 export const reactionRolesMap = {
   'project manager': {name: 'Project Manager', emoji: '🍏'},
-  // 'art director': {name: 'Art Director', emoji: '🍎'},
-  // 'creative director': {name: 'Creative Director', emoji: '🍐'},
   'fullstack': {name: 'Fullstack', emoji: '🍔'},
   'frontend': {name: 'Frontend', emoji: '🍎'},
   'backend': {name: 'Backend', emoji: '🍐'},
