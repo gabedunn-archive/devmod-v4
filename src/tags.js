@@ -238,6 +238,6 @@ export default {
     color: colours.blue,
     url: 'https://discord.me/devcord',
     description: 'You can invite people with' +
-    ' [this](https://discord.me/devcord) link.'
+    ' this link: [https://discord.me/devcord](https://discord.me/devcord).'
   }
 }
