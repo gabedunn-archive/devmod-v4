@@ -4,8 +4,8 @@ export default {
   bot: {
     title: 'Bot Channel',
     color: colours.blue,
-    description: 'Please use commands related to the bot in the #bot' +
-    ' channel. Thanks.'
+    description: 'Please use commands related to the bot in the' +
+    ' <#271293371438333952> channel. Thanks.'
   },
   ask: {
     title: 'Asking to Ask',
