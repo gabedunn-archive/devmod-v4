@@ -239,5 +239,10 @@ export default {
     url: 'https://discord.me/devcord',
     description: 'You can invite people with' +
     ' this link: [https://discord.me/devcord](https://discord.me/devcord).'
+  },
+  doubt: {
+    title: '[x] Doubt',
+    color: colours.blue,
+    image: {url: 'https://media.discordapp.net/attachments/174075418410876928/435482310612221993/doubt.jpg?width=400&height=228'}
   }
 }
