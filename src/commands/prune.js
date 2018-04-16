@@ -2,7 +2,7 @@ import { Command } from 'discord-akairo'
 
 export default class PruneCommand extends Command {
   constructor () {
-    super('print', {
+    super('prune', {
       aliases: ['prune'],
       category: 'util',
       description: 'Deletes last x messages.',
