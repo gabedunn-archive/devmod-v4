@@ -183,6 +183,7 @@ export default class GBPCommand extends Command {
             await db.run('INSERT OR REPLACE INTO `points` (`discord_id`,' +
               ' `points`) VALUES' +
               ' (?, ?)', args.member.user.id, newPoints)
+            embed.color = colours.red
             embed.description = `${args.member} now has  ${newPoints} GBP ${boye}`
             await message.delete(1)
             return message.util.send({embed})
@@ -196,6 +197,7 @@ export default class GBPCommand extends Command {
             }
             await db.run('INSERT OR REPLACE INTO `points` (`discord_id`,' +
               ' `points`) VALUES (?, ?)', args.member.user.id, args.points)
+            embed.color = colours.blue
             embed.description = `${args.member} now has  ${args.points} GBP ${boye}`
             await message.delete(1)
             return message.util.send({embed})
