@@ -33,7 +33,7 @@ export default class RolesCommand extends Command {
         if (Object.values(allRoles).includes(role.name)) {
           embed.fields.push({
             name: role.name,
-            value: `\`${prefix}role add ${role.name} | ${prefix}role rm ${role.name}\``
+            value: `\`${prefix}role add ${role.name}\` | \`${prefix}role rm ${role.name}\``
           })
         }
       }
