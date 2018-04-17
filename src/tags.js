@@ -39,8 +39,8 @@ export default {
     title: 'Posting in Multiple Channels',
     color: colours.orange,
     description: 'It would be greatly appreciated if you kept your posting' +
-    ' to the channel designated for that topic, and not posting it in' +
-    ' multiple channels.'
+    ' to the channel designated for that topic. Additionally, please refrain' +
+    ' from posting the same question in multiple channels.'
   },
   cs: {
     title: 'Christian Server',
