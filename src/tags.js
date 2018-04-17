@@ -244,5 +244,9 @@ export default {
     title: '[x] Doubt',
     color: colours.blue,
     image: {url: 'https://media.discordapp.net/attachments/174075418410876928/435482310612221993/doubt.jpg?width=400&height=228'}
+  },
+  fasy: {
+    color: colours.blue,
+    image: {url: 'https://media.discordapp.net/attachments/174075418410876928/435887256843321354/loamy.jpg?width=401&height=84'}
   }
 }
