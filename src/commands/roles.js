@@ -2,7 +2,7 @@ import { Command } from 'discord-akairo'
 
 import colours from '../colours'
 import { msgDeleteTime, prefix } from '../config'
-import approvedRoles from '../approvedRoles'
+import { allRoles } from '../approvedRoles'
 
 export default class RolesCommand extends Command {
   constructor () {
@@ -30,7 +30,7 @@ export default class RolesCommand extends Command {
         fields: []
       }
       for (const role of guild.roles.array()) {
-        if (Object.values(approvedRoles).includes(role.name)) {
+        if (Object.values(allRoles).includes(role.name)) {
           embed.fields.push({
             name: role.name,
             value: `\`${prefix}role add ${role.name} | ${prefix}role rm ${role.name}\``

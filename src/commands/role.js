@@ -1,7 +1,7 @@
 import { Command } from 'discord-akairo'
 
 import colours from '../colours'
-import approvedRoles from '../approvedRoles'
+import { allRoles } from '../approvedRoles'
 import { errorMessage } from '../common'
 
 export default class RoleCommand extends Command {
@@ -39,13 +39,13 @@ export default class RoleCommand extends Command {
         return message.util.send({embed})
       }
       args.role = args.role.toLowerCase()
-      if (!Object.keys(approvedRoles).includes(args.role)) {
+      if (!Object.keys(allRoles).includes(args.role)) {
         await message.react('❌')
         const embed = errorMessage('Invalid Role', 'You are not allowed to' +
-          ' add that role.')
+          ' add or remove that role.')
         return message.util.send({embed})
       }
-      const role = guild.roles.find('name', approvedRoles[args.role])
+      const role = guild.roles.find('name', allRoles[args.role])
       if (role === null) {
         await message.react('❌')
         const embed = errorMessage('Role Doesn\'t Exist', 'That role does' +
@@ -61,7 +61,7 @@ export default class RoleCommand extends Command {
               embed: {
                 title: 'Role Added',
                 color: colours.green,
-                description: `Added ${approvedRoles[args.role]} to ${message.member.user.tag}`,
+                description: `Added ${allRoles[args.role]} to ${message.member.user.tag}`,
                 author: {
                   name: message.member.user.username,
                   icon_url: message.member.user.avatarURL
