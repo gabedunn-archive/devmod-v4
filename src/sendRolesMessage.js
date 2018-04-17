@@ -16,7 +16,7 @@ client.on('ready', async () => {
     }
     const message = await guild.channels.find('name', channels.roles).send(
       'To add a role, react to this message with one of the specified' +
-      ' emojis:\n' + m.join(', ')
+      ' emojis:\n' + m.join('\n')
     )
     for (const reaction of Object.values(reactionRolesMap)) {
       await message.react(reaction.emoji)
