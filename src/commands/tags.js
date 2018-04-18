@@ -1,4 +1,5 @@
 import { Command } from 'discord-akairo'
+import { capitalize } from '../common'
 
 import { msgDeleteTime, prefix } from '../config'
 import colours from '../colours'
@@ -21,7 +22,8 @@ export default class TagCommand extends Command {
     try {
       const fields = []
       for (const [key, val] of Object.entries(tags)) {
-        fields.push({name: val.title, value: `${prefix}tag ${key}`})
+        const name = val.title ? val.title : capitalize(key )
+        fields.push({name, value: `${prefix}tag ${key}`})
       }
       if (fields.length === 0) {
         fields.push({
