@@ -74,6 +74,8 @@ const run = async () => {
 
 run()
 
-process.on('uncaughtException', e => {
-  console.log(`Uncaught Exception: ${e}`)
+process.on('uncaughtException', (e, p) => {
+  console.log(`Uncaught Exception: ${e} && ${p}`)
+  client.destroy()
+  process.exit(1)
 })
