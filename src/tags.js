@@ -248,5 +248,9 @@ export default {
   fasy: {
     color: colours.blue,
     image: {url: 'https://media.discordapp.net/attachments/174075418410876928/435887256843321354/loamy.jpg?width=401&height=84'}
+  },
+  dog: {
+    color: colours.blue,
+    image: {url: 'https://cdn.discordapp.com/attachments/174075418410876928/436958508039012379/unknown.png'}
   }
 }
