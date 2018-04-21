@@ -22,7 +22,7 @@ export default class UsersCommand extends Command {
           color: colours.blue,
           description: `There are currently ${guild.memberCount
             } users in this discord. (${guild.members.array().filter(
-            m => m.presence.status === 'online').length} currently online).`,
+            m => m.presence.status !== 'offline').length} currently online).`,
           author: {
             name: message.member.user.username,
             icon_url: message.member.user.avatarURL
