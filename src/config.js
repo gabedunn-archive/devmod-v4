@@ -17,6 +17,7 @@ export const channels = {
   report: process.env.CHANNEL_REPORT || 'reports',
   roles: process.env.CHANNEL_ROLES || 'roles'
 }
+export const mutedRole = process.env.MUTED_ROLE || 'muted'
 export const pointEmoji = process.env.POINTS_EMOJI || 'boye'
 export const statusInterval = process.env.STATUS_INTERVAL || 5
 export const pointsTopCount = process.env.POINTS_TOP_COUNT || 10
