@@ -15,7 +15,10 @@ export default class RoleCommand extends Command {
           id: 'member',
           type: 'member'
         }
-      ]
+      ],
+      clientPermissions: ['KICK_MEMBERS'],
+      userPermissions: ['KICK_MEMBERS'],
+      channelRestriction: 'guild'
     })
   }
 
