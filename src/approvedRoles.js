@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * Config file for approved roles.
+ */
 export const rolesMessages = [
   {
     name: 'Descriptive Roles',

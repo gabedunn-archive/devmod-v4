@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * Takes config from environment & put it in one place.
+ */
 import dotenv from 'dotenv'
 import { join } from 'path'
 

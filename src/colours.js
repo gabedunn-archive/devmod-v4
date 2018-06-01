@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * Config files for available colours.
+ */
 export default {
   red: 0xE74C3C,
   orange: 0xF39C12,

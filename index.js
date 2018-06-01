@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * Main file that calls all other files and specifies actions.
+ */
 import { AkairoClient } from 'discord-akairo'
 import { join } from 'path'
 import sqlite from 'sqlite-async'

@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * Config file for available activities.
+ */
 export default [
   'Counting your Good Boye Points.',
   'Trying to unban SWAT SEAL.',

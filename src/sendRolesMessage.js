@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * File to send message and add reactions to specified channel.
+ */
 import discord from 'discord.js'
 import sqlite from 'sqlite-async'
 

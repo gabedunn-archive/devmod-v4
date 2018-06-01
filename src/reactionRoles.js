@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * File that handles adding roles based on reactions.
+ */
 import sqlite from 'sqlite-async'
 
 import { allRolesMap } from './approvedRoles'

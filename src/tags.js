@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * List of available tags.
+ */
 import colours from './colours'
 
 export default {
