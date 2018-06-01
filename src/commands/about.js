@@ -1,3 +1,8 @@
+/*
+* Gabe Dunn 2018
+* File that handles the about command.
+*/
+
 import { Command } from 'discord-akairo'
 import colours from '../colours'
 import { msgDeleteTime } from '../config'
@@ -23,9 +28,6 @@ export default class PingCommand extends Command {
           title: 'DevMod - About the Bot',
           color: colours.blue,
           url: 'https://github.com/redxtech/devmod',
-          // thumbnail: {
-          //   url: 'https://cdn.discordapp.com/icons/174075418410876928/316a8d8a051a2cf85e2b3b43abef1b13.webp'
-          // },
           description: 'DevMod is a bot made for the DevCord community, but' +
           ' is applicable to any server that needs moderating. It is written' +
           ' with discord-akairo and discord.js. To use it on your own' +

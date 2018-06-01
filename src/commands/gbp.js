@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * The file that handles the gbp command.
+ */
 import { Command } from 'discord-akairo'
 import sqlite from 'sqlite-async'
 import colours from '../colours'
@@ -58,6 +62,7 @@ export default class GBPCommand extends Command {
           ? message.guild.emojis.find('name', pointEmoji)
           : ':)'
         let count, points, newPoints
+        // Switch for different commands based on args.
         switch (args.command) {
           case 'top':
             const topUsers = []

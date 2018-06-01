@@ -1,3 +1,7 @@
+/*
+* Gabe Dunn 2018
+* The file that handles the ban command.
+*/
 import { Command } from 'discord-akairo'
 import sqlite from 'sqlite-async'
 import colours from '../colours'
@@ -102,6 +106,7 @@ export default class BanCommand extends Command {
         days: time,
         reason: args.reason
       })
+      // Add ban information to bans database.
       try {
         const db = await sqlite.open(dbFile)
         await db.run('DELETE FROM `warnings` WHERE `discord_id` = ?',

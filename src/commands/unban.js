@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * The file that handles the unban command.
+ */
 import { Command } from 'discord-akairo'
 import sqlite from 'sqlite-async'
 import colours from '../colours'
@@ -39,6 +43,7 @@ export default class UnbanCommand extends Command {
       try {
         let user
         const bannedUsers = await message.guild.fetchBans()
+        // Check for user by tag, username, or discrim in banned users list.
         if (bannedUsers.find('tag', args.member) !== null) {
           user = bannedUsers.find('tag', args.member)
         } else if (bannedUsers.find('username', args.member) !== null) {

@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * The file that handles the warnlist command.
+ */
 import { Command } from 'discord-akairo'
 import sqlite from 'sqlite-async'
 import colours from '../colours'

@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * The file that handles the warn command.
+ */
 import { Command } from 'discord-akairo'
 import sqlite from 'sqlite-async'
 import colours from '../colours'
@@ -63,6 +67,8 @@ export default class WarnCommand extends Command {
       const executor = message.member.user
 
       try {
+        // Add warning into database & check numbers of previous warnings.
+        // Ban user if configs says to do so & warns is over limit.
         const db = await sqlite.open(dbFile)
         await db.run('INSERT INTO `warnings` (`discord_id`, `reason`, `date`,' +
           ' `mod_id`) VALUES (?, ?, ?, ?)', user.id, reason, new Date(),

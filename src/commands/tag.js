@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * The file that handles the tag command.
+ */
 import { Command } from 'discord-akairo'
 
 import { errorMessage } from '../common'

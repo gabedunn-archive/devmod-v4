@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * The file that handles the users command.
+ */
 import { Command } from 'discord-akairo'
 
 import colours from '../colours'

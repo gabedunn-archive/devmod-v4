@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * The file that handles the ping command.
+ */
 import { Command } from 'discord-akairo'
 import colours from '../colours'
 
@@ -18,6 +22,8 @@ export default class PingCommand extends Command {
     try {
       const sent = await message.util.send({embed})
       try {
+        // Calculate difference in time between when message was send & when
+        // it was edited.
         const timeDiff = (sent.editedAt || sent.createdAt) -
           (message.editedAt || message.createdAt)
         embed.fields = [

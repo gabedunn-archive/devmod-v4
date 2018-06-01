@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * The file that handles the prune command.
+ */
 import { Command } from 'discord-akairo'
 
 export default class PruneCommand extends Command {

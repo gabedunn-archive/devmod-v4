@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * The file that handles the help command.
+ */
 import { Command } from 'discord-akairo'
 
 import { msgDeleteTime, prefix } from '../config'
@@ -24,6 +28,7 @@ export default class TagCommand extends Command {
   // noinspection JSMethodCanBeStatic
   async exec (message, args) {
     try {
+      // Set fields to be the commands available.
       const fields = []
       for (const module of message.client.commandHandler.modules) {
         const name = capitalize(module[0])

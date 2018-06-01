@@ -1,3 +1,7 @@
+/*
+ * Gabe Dunn 2018
+ * The file that handles the clearWarns command.
+ */
 import { Command } from 'discord-akairo'
 import sqlite from 'sqlite-async'
 import colours from '../colours'
@@ -37,8 +41,8 @@ export default class ClearWarnsCommand extends Command {
         return message.util.send({embed})
       }
 
+      // Set amount to number or * based on args.
       let amount
-
       if (args.amount !== '*' && isNaN(Number(args.amount))) {
         amount = 1
       } else if (args.amount === '*') {
@@ -80,6 +84,7 @@ export default class ClearWarnsCommand extends Command {
           }
         })
       }
+      // Delete warnings from database based on amount arg
       try {
         const db = await sqlite.open(dbFile)
         if (amount === '*') {
