@@ -22,7 +22,7 @@ export default class TagCommand extends Command {
     try {
       const fields = []
       for (const [key, val] of Object.entries(tags)) {
-        const name = val.title ? val.title : capitalize(key )
+        const name = val.title ? val.title : capitalize(key)
         fields.push({name, value: `${prefix}tag ${key}`})
       }
       if (fields.length === 0) {

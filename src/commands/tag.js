@@ -1,8 +1,6 @@
 import { Command } from 'discord-akairo'
 
-import colours from '../colours'
 import { errorMessage } from '../common'
-
 import tags from '../tags'
 
 export default class TagCommand extends Command {

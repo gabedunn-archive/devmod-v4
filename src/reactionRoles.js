@@ -1,6 +1,6 @@
 import sqlite from 'sqlite-async'
 
-import { allRoles, allRolesMap, reactionRolesMap } from './approvedRoles'
+import { allRolesMap } from './approvedRoles'
 import { dbFile } from './config'
 
 export const roleAdd = async (

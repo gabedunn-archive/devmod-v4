@@ -66,7 +66,7 @@ export default class WarnCommand extends Command {
         const db = await sqlite.open(dbFile)
         await db.run('INSERT INTO `warnings` (`discord_id`, `reason`, `date`,' +
           ' `mod_id`) VALUES (?, ?, ?, ?)', user.id, reason, new Date(),
-          executor.id)
+        executor.id)
         return db.each('SELECT COUNT(`id`) AS `count` FROM `warnings` WHERE' +
           ' `discord_id` = ?', user.id, async (err, row) => {
           if (!err) {
