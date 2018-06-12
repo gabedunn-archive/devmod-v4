@@ -256,5 +256,19 @@ export default {
   dog: {
     color: colours.blue,
     image: {url: 'https://cdn.discordapp.com/attachments/174075418410876928/436958508039012379/unknown.png'}
-  }
+  },
+  sqlinjection: {
+    title: 'Bind your parameters to prevent SQL injection',
+    color: colours.blue,
+    description: 'Don\'t get hacked, use prepared statements as explained here:',
+    fields: [
+      {
+        name: 'PDO',
+        value: '[Prepared statements with PDO](https://secure.php.net/manual/en/pdo.prepared-statements.php).',
+      }, {
+        name: 'Mysqli',
+        value: '[Prepared statements with mysqli](https://secure.php.net/manual/en/mysqli.quickstart.prepared-statements.php).',
+      }
+    ]
+  },
 }
