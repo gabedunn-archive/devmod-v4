@@ -270,5 +270,5 @@ export default {
         value: '[Prepared statements with mysqli](https://secure.php.net/manual/en/mysqli.quickstart.prepared-statements.php).',
       }
     ]
-  },
+  }
 }
