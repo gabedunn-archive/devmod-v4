@@ -282,7 +282,7 @@ export default {
       },
       {
         name: 'Time Commitment',
-        valule: 'How long will this project take? How much time can someone expect to commit to this project? Is there a deadline or desired date of completion?'
+        value: 'How long will this project take? How much time can someone expect to commit to this project? Is there a deadline or desired date of completion?'
       },
       {
         name: 'Languages',
