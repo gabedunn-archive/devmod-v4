@@ -256,5 +256,14 @@ export default {
   dog: {
     color: colours.blue,
     image: {url: 'https://cdn.discordapp.com/attachments/174075418410876928/436958508039012379/unknown.png'}
+  },
+  template: {
+    title: 'Template',
+    color: colours.blue,
+    description: '[ Project Description ] A short description of the project.' +
+    '[ Time Commitment ] How long will this project take? How much time can someone expect to commit to this project? Is there a deadline or desired date of completion?' +
+    '[ Languages ] List all relevant languages.' +
+    '[ Skill Level ] What skill level are you looking for? Are you willing to work with junior developers or prefer middle/senior level developers?' +
+    '[ Communication ] What is the preferred method of communication? If a developer is interested, how should they contact you? Do NOT give out email addresses or other personally identifiable information.'
   }
 }
