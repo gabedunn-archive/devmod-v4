@@ -286,7 +286,7 @@ export default {
       },
       {
         name: 'Languages',
-        value: 'List ass relevant languages.'
+        value: 'List all relevant languages.'
       },
       {
         name: 'Skill Level',
