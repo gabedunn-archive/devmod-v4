@@ -8,7 +8,7 @@ don't need to be a developer to use it.
 
 ### Step 1 - Creating the Bot User
 
-First, go to the 
+First, go to the
 [Discord Developers](https://discordapp.com/developers/applications/me)
 page and create a new app. Name the app and give it a profile picture as you
 please. Afterwards, navigate to the "Bot" section. Click on "Add Bot" under the
