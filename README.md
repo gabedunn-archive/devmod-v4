@@ -50,20 +50,20 @@ Option | Default | Description
 `BOT_TOKEN` | | The token you got from creating the bot user.
 `OWNER_ID` | | Your [Discord ID](https://goo.gl/fTsqkq).
 `PREFIX` | `.` | The prefix to start off all bot commands.
-`MSG_DELETE_TIME` | `10` | The amount in seconds of how long to wait before deleting the help commands.
-`DB_FILE` | `devmod.sqlite` | The name for the database file for warnings and points.
-`AUTOBAN` | `true` | Whether or not to automatically ban a user after hitting the maximum warnings.
-`AUTOBAN_WARNS` | `3` | How many warnings are needed to autoban a user.
-`BAN_MSG_DELETE` | `0` | How many days of a users messages to delete after being banned.
+`MSG_DELETE_TIME` | `10` | The amount of seconds before deleting the help commands.
+`DB_FILE` | `devmod.sqlite` | The name of the database file for warnings and points.
+`AUTOBAN` | `true` | Whether or not to automatically ban a user after hitting the maximum amount of warnings.
+`AUTOBAN_WARNS` | `3` | The number warnings are needed to autoban a user.
+`BAN_MSG_DELETE` | `0` | The number of days of a user's messages to delete after being banned.
 `CHANNEL_LOG_WARN` | `warnings` | The name of the channel to log warnings.
 `CHANNEL_LOG_BAN` | `bans` | The name of the channel to log bans.
 `CHANNEL_LOG_REPORT` | `reports` | The name of the channel to log reports.
-`POINTS_EMOJI` | `boye` | Name of the server specific emoji to append to Good Boye Points.
-`STATUS_INTERVAL` | `5` | Amount in minutes of time between changing the bot's status.
-`POINTS_TOP_COUNT` | `10` | Amount of users to show in Good Boye Points top and bottom commands.
+`POINTS_EMOJI` | `boye` | The name of the server specific emoji to append to Good Boye Points.
+`STATUS_INTERVAL` | `5` | The amount of minutes between changing the bot's status.
+`POINTS_TOP_COUNT` | `10` | The amount of users to show in Good Boye Points top and bottom commands.
 
 Afterwards, open up `src/approvedRoles.js`. Add role names that you would like
-members to be able to assign to themselves via the role command. This is case 
+members to be able to assign to themselves via the role command. This is case
 sensitive, so be sure to get it 100% accurate.
 
 ### Step 5 - Running the Bot
