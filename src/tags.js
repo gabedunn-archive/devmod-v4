@@ -302,16 +302,16 @@ export default {
     title: 'Flexbox',
     color: colours.purple,
     description: 'The Flexible Box Module, usually referred to as flexbox, was' +
-        'designed as a one-dimensional layout model, and as a method that could' + 
-        'offer space distribution between items in an interface and powerful alignment capabilities.',
+        ' designed as a one-dimensional layout model, and as a method that could' + 
+        ' offer space distribution between items in an interface and powerful alignment capabilities.',
     fields: [
       {
         name: 'MDN web docs',
-        value: '[Flexbox documents](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox).'
+        value: '[Flexbox documents.](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)'
       },
       {
         name: 'Flexbox quickstart guide',
-        value: '[Learn flexbox in minutes! Easy, and powerful](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)!'
+        value: '[Learn flexbox in minutes! Easy, and powerful!](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)'
       },
       {
         name: 'Flexbox froggy',
@@ -319,7 +319,7 @@ export default {
       },
       {
         name: 'Flexbox Defense',
-        value: '[Blast enemies into nothingness with defensive towers postioned by flexbox](http://www.flexboxdefense.com/)'
+        value: '[Blast enemies into nothingness with defensive towers postioned by flexbox!](http://www.flexboxdefense.com/)'
       }
     ]
   }
