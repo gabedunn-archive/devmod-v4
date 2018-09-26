@@ -307,7 +307,7 @@ export default {
     fields: [
       {
         name: 'MDN web docs',
-        value: '[Flexbox documents.](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)'
+        value: '[Flexbox documentation.](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)'
       },
       {
         name: 'Flexbox quickstart guide',
@@ -320,6 +320,31 @@ export default {
       {
         name: 'Flexbox Defense',
         value: '[Blast enemies into nothingness with defensive towers postioned by flexbox!](http://www.flexboxdefense.com/)'
+      }
+    ]
+  },
+  fetch: {
+    title: 'JavaScript Fetch API',
+    color: colours.purple,
+    description: 'The Fetch API provides an interface for fetching resources' +
+    ' (including across the network). It will seem familiar to anyone who has used' + 
+    ' XMLHttpRequest, but the new API provides a more powerful and flexible feature set.',
+    fields: [
+      {
+          name: 'MDN web docs',
+          value: '[Fetch API documentation.](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)'
+      },
+      {
+          name: 'Fetch HTTPlib',
+          value: '[A Fetch library that assists with learning how to use fetch.](https://codepen.io/papaamazon-the-flexboxer/project/editor/DWwjNM)'
+      },
+      {
+          name: 'Fetch tutorial',
+          value: '[A tutorial that shows how to use fetch to get data from an API.](https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)'
+      },
+      {
+          name: 'MDN fetch useage example',
+          value: '[A very in depth write up write-up on how to use fetch.](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch_)'
       }
     ]
   }
