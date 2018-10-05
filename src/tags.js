@@ -148,48 +148,54 @@ export default {
         name: 'WebStorm/PHPStorm (or any other JetBrains Product)',
         value: 'These IDEs, as they have a full suite of tools for' +
         ' development. Additionally they have a plugin system for anything' +
-        ' that they do not automatically include.'
+        ' that they do not automatically include. [Webstorm Download](https://www.jetbrains.com/webstorm/), [PHPStorm Download](https://www.jetbrains.com/phpstorm/)'
       },
       {
         name: 'Visual Studio',
         value: 'Visual studio is a full IDE made by microsoft. It works well' +
         ' with .NET based languages, as they are made by the same people.' +
-        ' They also include a plugin system.'
+        ' They also include a plugin system. [Download](https://visualstudio.microsoft.com/)'
       },
       {
         name: 'NetBeans',
         value: 'I honestly don\'t know much about NetBeans, having never' +
         ' used it. If you know more make a PR on the DevMod repo. I do know' +
-        ' that it is a Java IDE.'
+        ' that it is a Java IDE. [Download](https://netbeans.org/)'
       },
       {
         name: 'Atom',
         value: 'Atom is a code editor based on web technology. It\'s made by' +
-        ' GitHub, and has a massive community, with plugins for everything.'
+        ' GitHub, and has a massive community, with plugins for everything. [Download](https://atom.io/)'
       },
       {
         name: 'VS Code',
         value: 'VS Code is another editor based off of web technology, but' +
         ' is better optimized and runs faster. This is built by microsoft' +
-        ' and has a large set of plugins as well.'
+        ' and has a large set of plugins as well. [Download](https://code.visualstudio.com/)'
       },
       {
         name: 'Sublime Text',
         value: 'Sublime text starts off as a nice small and fast editor.' +
         ' It\'s the fastest text editor that I\'ve seen. There is also a' +
-        ' wide selection of plugins.'
+        ' wide selection of plugins. [Download](https://www.sublimetext.com/)'
       },
       {
         name: 'Vim',
         value: 'Vim is a command line text editor with plugins that can do' +
         ' pretty much anything. It is largely popular, but has a learning' +
-        ' curve before you can be productive in it.'
+        ' curve before you can be productive in it. [Download](https://www.vim.org/)'
       },
       {
         name: 'Brackets',
         value: 'Brackets is also based on web tech, and has a live reload' +
         ' feature that allows you to view your website live. Many other' +
-        ' editors have this feature, but few work as smoothly as this one.'
+        ' editors have this feature, but few work as smoothly as this one. [Download](http://brackets.io/)'
+      },
+      {
+        name: 'Notepad++',
+        value: 'Notepad++ is a very lightweight code editor, with a lot ' + 
+        'of plugins for everything you can think of. It is beyond excellent ' + 
+        'for quick edit or doodle work. [Download](https://notepad-plus-plus.org/)'
       }
     ]
   },
