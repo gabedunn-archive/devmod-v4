@@ -314,7 +314,7 @@ export default {
         value: '[Learn flexbox in minutes! Easy, and powerful!](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)'
       },
       {
-        name: 'Flexbox froggy',
+        name: 'Flexbox Froggy',
         value: '[Get frogs to where they need to be with the magic of flexbox!](https://flexboxfroggy.com)'
       },
       {
