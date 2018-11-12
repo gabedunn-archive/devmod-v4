@@ -11,7 +11,12 @@ export const botToken = process.env.BOT_TOKEN
 export const ownerID = process.env.OWNER_ID
 export const prefix = process.env.PREFIX || '.'
 export const msgDeleteTime = process.env.MSG_DELETE_TIME || 10
-export const dbFile = join(__dirname, '..', process.env.DB_FILE || 'devmod.sqlite')
+export const dbFile = join(
+  __dirname,
+  '..',
+  process.env.DB_FILE || 'devmod.sqlite'
+)
+export const migrationDir = join(__dirname, '..', 'migrations')
 export const autoBan = process.env.AUTOBAN || true
 export const autoBanWarns = process.env.AUTOBAN_WARNS || 3
 export const banMsgDelete = process.env.BAN_MSG_DELETE || 0

@@ -3,7 +3,7 @@
  * File to send message and add reactions to specified channel.
  */
 import discord from 'discord.js'
-import sqlite from 'sqlite-async'
+import Database from 'better-sqlite3'
 
 import { rolesMessages } from './approvedRoles'
 import colours from './colours'
@@ -47,13 +47,11 @@ async function finished (messageIDs) {
   const IDsString = JSON.stringify(messageIDs)
   console.log(IDsString)
   try {
-    const db = await sqlite.open(dbFile)
-    await db.run('CREATE TABLE IF NOT EXISTS settings (' +
-      'id INTEGER PRIMARY KEY, ' +
-      'key TEXT NOT NULL UNIQUE, ' +
-      'value TEXT NOT NULL)')
-    await db.run('INSERT OR REPLACE INTO `settings` (`key`, `value`)' +
-      ' VALUES (?, ?)', 'reaction_message_ids', IDsString)
+    const db = new Database(dbFile)
+
+    db.prepare(
+      'INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)'
+    ).run('reaction_message_ids', IDsString)
   } catch (e) {
     console.log(`Error setting message ID in database: ${e}`)
   }

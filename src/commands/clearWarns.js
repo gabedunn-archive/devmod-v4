@@ -3,7 +3,7 @@
  * The file that handles the clearWarns command.
  */
 import { Command } from 'discord-akairo'
-import sqlite from 'sqlite-async'
+import Database from 'better-sqlite3'
 import colours from '../colours'
 
 import { errorMessage } from '../common'
@@ -36,9 +36,11 @@ export default class ClearWarnsCommand extends Command {
     try {
       if (!args.member) {
         await message.react('❌')
-        const embed = errorMessage('Member Not Found',
-          'No member found with that name.')
-        return message.util.send({embed})
+        const embed = errorMessage(
+          'Member Not Found',
+          'No member found with that name.'
+        )
+        return message.util.send({ embed })
       }
 
       // Set amount to number or * based on args.
@@ -53,9 +55,11 @@ export default class ClearWarnsCommand extends Command {
 
       if (amount < 1) {
         await message.react('❌')
-        const embed = errorMessage('Invalid Number',
-          'The number of warns to delete must be at least 1.')
-        return message.util.send({embed})
+        const embed = errorMessage(
+          'Invalid Number',
+          'The number of warns to delete must be at least 1.'
+        )
+        return message.util.send({ embed })
       }
       await message.delete(1)
 
@@ -86,17 +90,22 @@ export default class ClearWarnsCommand extends Command {
       }
       // Delete warnings from database based on amount arg
       try {
-        const db = await sqlite.open(dbFile)
+        const db = new Database(dbFile)
+        const {
+          member: {
+            user: { id }
+          }
+        } = args
+
         if (amount === '*') {
-          await db.run('DELETE FROM `warnings` WHERE `discord_id` = ?',
-            args.member.user.id)
-          return reply()
-        } else {
-          await db.run(
-            'DELETE FROM `warnings` WHERE `id` IN (SELECT `id` FROM `warnings` WHERE `discord_id` = ? ORDER BY `id` DESC LIMIT ?)',
-            args.member.user.id, amount)
+          db.prepare('DELETE FROM warnings WHERE discord_id = ?').run(id)
           return reply()
         }
+
+        db.prepare(
+          'DELETE FROM warnings WHERE id IN (SELECT id FROM warnings WHERE discord_id = ? ORDER BY id DESC LIMIT ?)'
+        ).run(id, amount)
+        return reply()
       } catch (e) {
         console.log(`Error setting reply: ${e}`)
         return null
