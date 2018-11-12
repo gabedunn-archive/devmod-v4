@@ -127,7 +127,7 @@ export default class BanCommand extends Command {
           .prepare(
             'INSERT INTO bans (discord_id, discord_name, reason, date, mod_id) VALUES (?, ?, ?, CURRENT_TIMESTAMP, ?)'
           )
-          .get(user.id, user.tag, args.reason, message.member.user.id)
+          .run(user.id, user.tag, args.reason, message.member.user.id)
       } catch (e) {
         console.log(`Accessing DB failed: ${e}`)
       }
