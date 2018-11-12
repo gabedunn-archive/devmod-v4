@@ -2,34 +2,55 @@
  * Gabe Dunn 2018
  * File that handles adding roles based on reactions.
  */
-import sqlite from 'sqlite-async'
+import Database from 'better-sqlite3'
 
 import { allRolesMap } from './approvedRoles'
 import { dbFile } from './config'
 
+const roleAction = async (
+  { client, guildId, messageId, userId, emojiName },
+  remove = false
+) => {
+  const db = new Database(dbFile)
+  const reactions = db.prepare(
+    'SELECT * FROM `settings` WHERE `key` = ? LIMIT 1'
+  )
+
+  for (const row of reactions.iterate('reaction_message_ids')) {
+    const guild = client.guilds.get(guildId)
+    const member = guild.member(userId)
+    const roles = guild.roles
+    const messageIDs = JSON.parse(row.value)
+
+    if (!messageIDs.includes(messageId)) continue
+
+    for (const reaction of Object.values(allRolesMap)) {
+      if (emojiName !== reaction) continue
+
+      const role = roles.find('name', reaction.name)
+      if (role !== null) {
+        remove ? await member.addRole(role) : await member.removeRole(role)
+      }
+    }
+  }
+}
+
 export const roleAdd = async (
-  client, guildId, messageId, userId, emojiName) => {
+  client,
+  guildId,
+  messageId,
+  userId,
+  emojiName
+) => {
   try {
-    const db = await sqlite.open(dbFile)
-    await db.each('SELECT * FROM `settings` WHERE `key` = ? LIMIT 1',
-      'reaction_message_ids', async (err, row) => {
-        if (!err) {
-          const guild = client.guilds.get(guildId)
-          const member = guild.member(userId)
-          const roles = guild.roles
-          const messageIDs = JSON.parse(row.value)
-          if (messageIDs.includes(messageId)) {
-            for (const reaction of Object.values(allRolesMap)) {
-              if (emojiName === reaction.emoji) {
-                const role = roles.find('name', reaction.name)
-                if (role !== null) {
-                  await member.addRole(role)
-                }
-              }
-            }
-          }
-        }
-      })
+    const ctx = {
+      client,
+      guildId,
+      messageId,
+      userId,
+      emojiName
+    }
+    await roleAction(ctx)
   } catch (e) {
     console.log(`Failed to add role: ${e}`)
   }
@@ -37,26 +58,14 @@ export const roleAdd = async (
 
 export const roleRm = async (client, guildId, messageId, userId, emojiName) => {
   try {
-    const db = await sqlite.open(dbFile)
-    await db.each('SELECT * FROM `settings` WHERE `key` = ? LIMIT 1',
-      'reaction_message_ids', async (err, row) => {
-        if (!err) {
-          const guild = client.guilds.get(guildId)
-          const member = guild.member(userId)
-          const roles = guild.roles
-          const messageIDs = JSON.parse(row.value)
-          if (messageIDs.includes(messageId)) {
-            for (const reaction of Object.values(allRolesMap)) {
-              if (emojiName === reaction.emoji) {
-                const role = roles.find('name', reaction.name)
-                if (role !== null) {
-                  await member.removeRole(role)
-                }
-              }
-            }
-          }
-        }
-      })
+    const ctx = {
+      client,
+      guildId,
+      messageId,
+      userId,
+      emojiName
+    }
+    await roleAction(ctx, true)
   } catch (e) {
     console.log(`Failed to remove role: ${e}`)
   }

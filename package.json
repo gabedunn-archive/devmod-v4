@@ -29,6 +29,7 @@
     "parcel-bundler": "^1.7.0"
   },
   "dependencies": {
+    "better-sqlite3": "^5.0.1",
     "bufferutil": "^3.0.3",
     "discord-akairo": "^7.5.4",
     "discord.js": "^11.3.2",
@@ -36,7 +37,6 @@
     "erlpack": "^0.1.2",
     "libsodium-wrappers": "^0.7.3",
     "moment": "^2.22.0",
-    "node-opus": "^0.2.7",
-    "sqlite-async": "^1.0.10"
+    "node-opus": "^0.2.7"
   }
 }

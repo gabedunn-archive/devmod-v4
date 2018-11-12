@@ -3,7 +3,7 @@
  * The file that handles the unban command.
  */
 import { Command } from 'discord-akairo'
-import sqlite from 'sqlite-async'
+import Database from 'better-sqlite3'
 import colours from '../colours'
 
 import { errorMessage } from '../common'
@@ -44,10 +44,10 @@ export default class UnbanCommand extends Command {
         let user
         const bannedUsers = await message.guild.fetchBans()
         // Check for user by tag, username, or discrim in banned users list.
-        if (bannedUsers.find('tag', args.member) !== null) {
-          user = bannedUsers.find('tag', args.member)
-        } else if (bannedUsers.find('username', args.member) !== null) {
-          user = bannedUsers.find('username', args.member)
+        if (bannedUsers.find(t => t.tag === args.member) !== null) {
+          user = bannedUsers.find(t => t.tag === args.member)
+        } else if (bannedUsers.find(u => u.username === args.member) !== null) {
+          user = bannedUsers.find(u => u.username === args.member)
         } else if (bannedUsers.get(args.member) !== null) {
           user = bannedUsers.get(args.member)
         }
@@ -59,8 +59,9 @@ export default class UnbanCommand extends Command {
         }
         await message.delete(1)
         try {
-          const db = await sqlite.open(dbFile)
-          await db.run('DELETE FROM `bans` WHERE `discord_id` = ?', user.id)
+          const db = await Database(dbFile)
+          db.prepare('DELETE FROM bans WHERE discord_id = ?').run(user.id)
+
           try {
             await message.guild.unban(user, args.reason)
             await user.send({
@@ -80,7 +81,7 @@ export default class UnbanCommand extends Command {
                 }
               }
             })
-            return message.guild.channels.find('name', channels.ban).send({
+            return message.guild.channels.find(c => c.name === channels.ban).send({
               embed: {
                 color: colours.green,
                 title: 'Unban',

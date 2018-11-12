@@ -5,15 +5,16 @@
 export const rolesMessages = [
   {
     name: 'Descriptive Roles',
-    message: 'These roles are meant to be descriptive about what you do. You' +
-    ' can add these by reacting to this message with the corresponding emoji.',
+    message:
+      'These roles are meant to be descriptive about what you do. You' +
+      ' can add these by reacting to this message with the corresponding emoji.',
     roles: {
-      'helper': {name: 'helpers', emoji: '🚁'},
-      'css-html-help': {name: 'css-html-help', emoji: '📰'},
-      'ui-help': {name: 'ui-help', emoji: '📱'},
-      'php-help': {name: 'php-help', emoji: '🦖'},
-      'javascript-help': {name: 'javascript-help', emoji: '🖥'},
-      'developer': {name: 'developer', emoji: '☕'},
+      helper: { name: 'helpers', emoji: '🚁' },
+      'css-html-help': { name: 'css-html-help', emoji: '📰' },
+      'ui-help': { name: 'ui-help', emoji: '📱' },
+      'php-help': { name: 'php-help', emoji: '🦖' },
+      'javascript-help': { name: 'javascript-help', emoji: '🖥' },
+      developer: { name: 'developer', emoji: '☕' }
     }
   }
 ]
