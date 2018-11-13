@@ -8,7 +8,7 @@ import { join } from 'path'
  */
 module.exports = () => {
   const db = new Database(dbFile)
-  const dir = fs.readdirSync(migrationDir)
+  const dir = fs.readdirSync(migrationDir).sort()
 
   for (const migrationFile of dir) {
     db.exec(fs.readFileSync(join(migrationDir, migrationFile), 'utf8'))
