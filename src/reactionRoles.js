@@ -29,7 +29,7 @@ const roleAction = async (
 
       const role = roles.find('name', reaction.name)
       if (role !== null) {
-        remove ? await member.addRole(role) : await member.removeRole(role)
+        remove ? await member.removeRole(role) : await member.addRole(role)
       }
     }
   }
