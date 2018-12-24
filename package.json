@@ -1,5 +1,5 @@
 {
-  "name": "DevMod",
+  "name": "dev-mod",
   "version": "1.0.0",
   "description": "Bot for moderating the DevCord server.",
   "main": "src/index.js",
@@ -15,28 +15,30 @@
     "start": "babel-node index.js"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "envup": "^1.1.0",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.10.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "nodemon": "^1.17.3",
-    "parcel-bundler": "^1.7.0"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "envup": "^1.1.2",
+    "eslint": "^5.11.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.18.9",
+    "parcel-bundler": "^1.11.0"
   },
   "dependencies": {
-    "better-sqlite3": "^5.0.1",
-    "bufferutil": "^3.0.3",
-    "discord-akairo": "^7.5.4",
-    "discord.js": "^11.3.2",
-    "dotenv": "^5.0.1",
+    "better-sqlite3": "^5.2.1",
+    "bufferutil": "^4.0.1",
+    "discord-akairo": "^7.5.5",
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.2.0",
     "erlpack": "^0.1.2",
     "libsodium-wrappers": "^0.7.3",
-    "moment": "^2.22.0",
-    "node-opus": "^0.2.7"
+    "moment": "^2.23.0",
+    "node-opus": "^0.3.1"
   }
 }

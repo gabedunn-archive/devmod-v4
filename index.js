@@ -5,7 +5,7 @@
 import { AkairoClient } from 'discord-akairo'
 import { join } from 'path'
 
-import { botToken, dbFile, ownerID, prefix, statusInterval } from './src/config'
+import { botToken, ownerID, prefix, statusInterval } from './src/config'
 import activities from './src/activities'
 import { roleAdd, roleRm } from './src/reactionRoles'
 import { migrate } from './src/utils'

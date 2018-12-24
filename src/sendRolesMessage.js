@@ -52,6 +52,7 @@ async function finished (messageIDs) {
     db.prepare(
       'INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)'
     ).run('reaction_message_ids', IDsString)
+    console.log('Success!')
   } catch (e) {
     console.log(`Error setting message ID in database: ${e}`)
   }

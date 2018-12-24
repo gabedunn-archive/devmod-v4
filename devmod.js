@@ -1,6 +1,6 @@
 /*
  * Gabe Dunn 2018
- * Add babel-register to run in node.
+ * Add @babel/register to run in node.
  */
-require('babel-register')
+require('@babel/register')
 require('./index')
