@@ -9,12 +9,12 @@ export const rolesMessages = [
       'These roles are meant to be descriptive about what you do. You' +
       ' can add these by reacting to this message with the corresponding emoji.',
     roles: {
-      helper: { name: 'helpers', emoji: '🚁' },
-      'css-html-help': { name: 'css-html-help', emoji: '📰' },
-      'ui-help': { name: 'ui-help', emoji: '📱' },
-      'php-help': { name: 'php-help', emoji: '🦖' },
-      'javascript-help': { name: 'javascript-help', emoji: '🖥' },
-      developer: { name: 'developer', emoji: '☕' }
+      developer: { name: 'Developer', emoji: '☕' },
+      helper: { name: 'Helper (general)', emoji: '🚁' },
+      'javascript-help': { name: 'JavasScript Helper', emoji: '🖥' },
+      'css-html-help': { name: 'CSS/HTML Helper', emoji: '📰' },
+      'ui-help': { name: 'UI Helper', emoji: '📱' },
+      'php-help': { name: 'PHP Helper', emoji: '♦' }
     }
   }
 ]
