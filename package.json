@@ -1,5 +1,5 @@
 {
-  "name": "dev-mod",
+  "name": "devmod",
   "version": "1.0.0",
   "description": "Bot for moderating the DevCord server.",
   "main": "src/index.js",
