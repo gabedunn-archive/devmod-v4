@@ -51,7 +51,7 @@ export default class RolesCommand extends Command {
           }
         ]
       }
-      const sent = await message.util.send({embed})
+      const sent = await message.util.send({ embed })
       return setTimeout(() => {
         sent.delete(1)
       }, msgDeleteTime * 1000)

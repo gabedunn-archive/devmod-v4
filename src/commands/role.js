@@ -34,27 +34,27 @@ export default class RoleCommand extends Command {
         await message.react('❌')
         const embed = errorMessage('No Command Specified', 'You need to' +
           ' specify a command to use.')
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
       if (!args.role) {
         await message.react('❌')
         const embed = errorMessage('No Role Specified', 'You need to specify' +
           ' a role to use.')
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
       args.role = args.role.toLowerCase()
       if (!Object.keys(allRoles).includes(args.role)) {
         await message.react('❌')
         const embed = errorMessage('Invalid Role', 'You are not allowed to' +
           ' add or remove that role.')
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
       const role = guild.roles.find('name', allRoles[args.role])
       if (role === null) {
         await message.react('❌')
         const embed = errorMessage('Role Doesn\'t Exist', 'That role does' +
           ' not exist. Specify a valid role.')
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
       switch (args.command) {
         case 'add':
@@ -106,7 +106,7 @@ export default class RoleCommand extends Command {
         default:
           await message.react('❌')
           return message.util.send(
-            {embed: errorMessage('Wrong Usage', 'That is not a role command.')}
+            { embed: errorMessage('Wrong Usage', 'That is not a role command.') }
           )
       }
     } catch (e) {

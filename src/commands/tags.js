@@ -27,7 +27,7 @@ export default class TagCommand extends Command {
       const fields = []
       for (const [key, val] of Object.entries(tags)) {
         const name = val.title ? val.title : capitalize(key)
-        fields.push({name, value: `${prefix}tag ${key}`})
+        fields.push({ name, value: `${prefix}tag ${key}` })
       }
       if (fields.length === 0) {
         fields.push({
@@ -47,12 +47,12 @@ export default class TagCommand extends Command {
       }
       if (message.channel.type !== 'dm') {
         await message.delete(1)
-        const sent = await message.util.send({embed})
+        const sent = await message.util.send({ embed })
         return setTimeout(() => {
           sent.delete(1)
         }, msgDeleteTime * 1000)
       } else {
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
     } catch (e) {
       console.log(`Tags command failed: ${e}`)

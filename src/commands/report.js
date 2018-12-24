@@ -31,7 +31,7 @@ export default class ReportCommand extends Command {
         await message.react('❌')
         const embed = errorMessage('Message Not Valid',
           'Please specify a message.')
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
       await message.delete(1)
 

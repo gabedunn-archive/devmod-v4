@@ -49,12 +49,12 @@ export default {
   cs: {
     title: 'Christian Server',
     color: colours.red,
-    image: {url: 'https://cdn.discordapp.com/attachments/174075418410876928/377425219872096256/maxresdefault.png'}
+    image: { url: 'https://cdn.discordapp.com/attachments/174075418410876928/377425219872096256/maxresdefault.png' }
   },
   canudont: {
     title: 'Can U Dont',
     color: colours.blue,
-    image: {url: 'https://cdn.discordapp.com/attachments/174075418410876928/428989988286365696/can_u_dont.jpg'}
+    image: { url: 'https://cdn.discordapp.com/attachments/174075418410876928/428989988286365696/can_u_dont.jpg' }
   },
   code: {
     title: 'Use Code Blocks',
@@ -121,7 +121,7 @@ export default {
   nice: {
     title: 'Nice',
     color: colours.blue,
-    image: {url: 'https://cdn.discordapp.com/attachments/287200463382642689/433326230495035412/1447912710960.jpg'}
+    image: { url: 'https://cdn.discordapp.com/attachments/287200463382642689/433326230495035412/1447912710960.jpg' }
   },
   editor: {
     title: 'IDEs & Text Editors',
@@ -193,8 +193,8 @@ export default {
       },
       {
         name: 'Notepad++',
-        value: 'Notepad++ is a very lightweight code editor, with a lot ' + 
-        'of plugins for everything you can think of. It is beyond excellent ' + 
+        value: 'Notepad++ is a very lightweight code editor, with a lot ' +
+        'of plugins for everything you can think of. It is beyond excellent ' +
         'for quick edit or doodle work. [Download](https://notepad-plus-plus.org/)'
       }
     ]
@@ -253,15 +253,15 @@ export default {
   doubt: {
     title: '[x] Doubt',
     color: colours.blue,
-    image: {url: 'https://media.discordapp.net/attachments/174075418410876928/435482310612221993/doubt.jpg?width=400&height=228'}
+    image: { url: 'https://media.discordapp.net/attachments/174075418410876928/435482310612221993/doubt.jpg?width=400&height=228' }
   },
   fasy: {
     color: colours.blue,
-    image: {url: 'https://media.discordapp.net/attachments/174075418410876928/435887256843321354/loamy.jpg?width=401&height=84'}
+    image: { url: 'https://media.discordapp.net/attachments/174075418410876928/435887256843321354/loamy.jpg?width=401&height=84' }
   },
   dog: {
     color: colours.blue,
-    image: {url: 'https://cdn.discordapp.com/attachments/174075418410876928/436958508039012379/unknown.png'}
+    image: { url: 'https://cdn.discordapp.com/attachments/174075418410876928/436958508039012379/unknown.png' }
   },
   sqlinjection: {
     title: 'Bind your parameters to prevent SQL injection',
@@ -270,10 +270,10 @@ export default {
     fields: [
       {
         name: 'PDO',
-        value: '[Prepared statements with PDO](https://secure.php.net/manual/en/pdo.prepared-statements.php).',
+        value: '[Prepared statements with PDO](https://secure.php.net/manual/en/pdo.prepared-statements.php).'
       }, {
         name: 'Mysqli',
-        value: '[Prepared statements with mysqli](https://secure.php.net/manual/en/mysqli.quickstart.prepared-statements.php).',
+        value: '[Prepared statements with mysqli](https://secure.php.net/manual/en/mysqli.quickstart.prepared-statements.php).'
       }
     ]
   },
@@ -308,7 +308,7 @@ export default {
     title: 'Flexbox',
     color: colours.purple,
     description: 'The Flexible Box Module, usually referred to as flexbox, was' +
-        ' designed as a one-dimensional layout model, and as a method that could' + 
+        ' designed as a one-dimensional layout model, and as a method that could' +
         ' offer space distribution between items in an interface and powerful alignment capabilities.',
     fields: [
       {
@@ -333,24 +333,24 @@ export default {
     title: 'JavaScript Fetch API',
     color: colours.purple,
     description: 'The Fetch API provides an interface for fetching resources' +
-    ' (including across the network). It will seem familiar to anyone who has used' + 
+    ' (including across the network). It will seem familiar to anyone who has used' +
     ' XMLHttpRequest, but the new API provides a more powerful and flexible feature set.',
     fields: [
       {
-          name: 'MDN web docs',
-          value: '[Fetch API documentation.](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)'
+        name: 'MDN web docs',
+        value: '[Fetch API documentation.](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)'
       },
       {
-          name: 'Fetch HTTPlib',
-          value: '[A Fetch library that assists with learning how to use fetch.](https://codepen.io/papaamazon-the-flexboxer/project/editor/DWwjNM)'
+        name: 'Fetch HTTPlib',
+        value: '[A Fetch library that assists with learning how to use fetch.](https://codepen.io/papaamazon-the-flexboxer/project/editor/DWwjNM)'
       },
       {
-          name: 'Fetch tutorial',
-          value: '[A tutorial that shows how to use fetch to get data from an API.](https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)'
+        name: 'Fetch tutorial',
+        value: '[A tutorial that shows how to use fetch to get data from an API.](https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)'
       },
       {
-          name: 'MDN fetch useage example',
-          value: '[A very in depth write up write-up on how to use fetch.](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch_)'
+        name: 'MDN fetch useage example',
+        value: '[A very in depth write up write-up on how to use fetch.](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch_)'
       }
     ]
   }

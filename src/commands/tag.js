@@ -44,11 +44,11 @@ export default class TagCommand extends Command {
         icon_url: user.avatarURL
       }
       if (message.channel.type === 'dm') {
-        return message.util.send({embed})
+        return message.util.send({ embed })
       } else if (args.member) {
-        return message.util.send(args.member, {embed})
+        return message.util.send(args.member, { embed })
       } else {
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
     } catch (e) {
       console.log(`Tag command failed: ${e}`)

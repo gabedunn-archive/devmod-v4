@@ -38,7 +38,7 @@ export default class UnbanCommand extends Command {
         await message.react('❌')
         const embed = errorMessage('Member Not Found',
           'No member found with that name.')
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
       try {
         let user
@@ -55,7 +55,7 @@ export default class UnbanCommand extends Command {
           await message.react('❌')
           const embed = errorMessage('User not Found', 'That user has not' +
             ' been banned.')
-          return message.util.send({embed})
+          return message.util.send({ embed })
         }
         await message.delete(1)
         try {

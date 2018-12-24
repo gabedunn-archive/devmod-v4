@@ -27,7 +27,7 @@ export default class PruneCommand extends Command {
     try {
       const amount = args.amount > 50 ? 50 : args.amount
       await message.delete(1)
-      const messages = await message.channel.fetchMessages({limit: amount})
+      const messages = await message.channel.fetchMessages({ limit: amount })
       return messages.deleteAll()
     } catch (e) {
       console.log(`Error deleting messages: ${e}`)

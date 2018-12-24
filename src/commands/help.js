@@ -73,17 +73,17 @@ export default class TagCommand extends Command {
       if (message.channel.type !== 'dm') {
         await message.delete(1)
         if (!args.member) {
-          const sent = await message.util.send({embed})
+          const sent = await message.util.send({ embed })
           return setTimeout(() => {
             sent.delete(1)
           }, msgDeleteTime * 1000)
         } else {
           const member = message.guild.member(args.member.id)
           const dm = await member.createDM()
-          return dm.send({embed})
+          return dm.send({ embed })
         }
       } else {
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
     } catch (e) {
       console.log(`Help command failed: ${e}`)

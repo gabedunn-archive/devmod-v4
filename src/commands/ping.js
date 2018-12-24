@@ -20,7 +20,7 @@ export default class PingCommand extends Command {
       color: colours.blue
     }
     try {
-      const sent = await message.util.send({embed})
+      const sent = await message.util.send({ embed })
       try {
         // Calculate difference in time between when message was send & when
         // it was edited.
@@ -36,7 +36,7 @@ export default class PingCommand extends Command {
             value: `${Math.round(this.client.ping)}ms.`
           }
         ]
-        return message.util.send({embed})
+        return message.util.send({ embed })
       } catch (e) {
         console.log(`Error updating message: ${e}`)
         return null

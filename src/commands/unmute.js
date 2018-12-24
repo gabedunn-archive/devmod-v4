@@ -34,14 +34,14 @@ export default class RoleCommand extends Command {
         await message.react('❌')
         const embed = errorMessage('No Member Specified', 'You need to' +
           ' specify a member to unmute.')
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
       const role = guild.roles.find('name', mutedRole)
       if (role === null) {
         await message.react('❌')
         const embed = errorMessage('Role Doesn\'t Exist', 'That role does' +
           ' not exist. Add a valid muted role.')
-        return message.util.send({embed})
+        return message.util.send({ embed })
       }
       try {
         await args.member.removeRole(role)
