@@ -24,10 +24,11 @@ const roleAction = async (
 
     if (!messageIDs.includes(messageId)) continue
 
-    for (const reaction of Object.values(allRolesMap)) {
-      if (emojiName !== reaction) continue
+    for (const reaction of Object.keys(allRolesMap)) {
+      const react = allRolesMap[reaction]
 
-      const role = roles.find('name', reaction.name)
+      if (emojiName !== react.emoji) continue
+      const role = roles.find('name', reaction)
       if (role !== null) {
         remove ? await member.removeRole(role) : await member.addRole(role)
       }
