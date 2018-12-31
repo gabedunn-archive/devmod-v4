@@ -49,7 +49,7 @@ export default class RoleCommand extends Command {
           ' add or remove that role.')
         return message.util.send({ embed })
       }
-      const role = guild.roles.find('name', allRoles[args.role])
+      const role = guild.roles.find(r => r.name === allRoles[args.role])
       if (role === null) {
         await message.react('❌')
         const embed = errorMessage('Role Doesn\'t Exist', 'That role does' +

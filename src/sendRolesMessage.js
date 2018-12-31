@@ -22,7 +22,7 @@ client.on('ready', async () => {
       for (const reaction of Object.values(roles.roles)) {
         m.push(`${reaction.name}: ${reaction.emoji}`)
       }
-      const message = await guild.channels.find('name', channels.roles).send({
+      const message = await guild.channels.find(c => c.name === channels.roles).send({
         embed: {
           title: roles.name,
           color: colours.blue,

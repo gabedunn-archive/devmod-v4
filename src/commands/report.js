@@ -35,7 +35,7 @@ export default class ReportCommand extends Command {
       }
       await message.delete(1)
 
-      return message.guild.channels.find('name', channels.report).send({
+      return message.guild.channels.find(c => c.name === channels.report).send({
         embed: {
           color: colours.red,
           title: 'New Report',

@@ -36,7 +36,7 @@ export default class RoleCommand extends Command {
           ' specify a member to mute.')
         return message.util.send({ embed })
       }
-      const role = guild.roles.find('name', mutedRole)
+      const role = guild.roles.find(r => r.name === mutedRole)
       if (role === null) {
         await message.react('❌')
         const embed = errorMessage('Role Doesn\'t Exist', 'That role does' +

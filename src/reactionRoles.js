@@ -28,7 +28,7 @@ const roleAction = async (
       const react = allRolesMap[reaction]
 
       if (emojiName !== react.emoji) continue
-      const role = roles.find('name', reaction)
+      const role = roles.find(r => r.name === reaction)
       if (role !== null) {
         remove ? await member.removeRole(role) : await member.addRole(role)
       }
