@@ -383,5 +383,13 @@ export default {
         value: '[A CSS Grid video series by Wes Bos.](https://cssgrid.io/)'
       }
     ]
+  },
+  thanks: {
+    title: 'Thanking people',
+    color: colours.purple,
+    description: 'Thanking someone is a nice way to appreciate the help they have given you' +
+        ' for solving a problem or explaining something. ' +
+        ' You can thank someone by typing ``thanks @user#id``.' +
+        ' Additionally any sentence with the word "thank" and a user tag will thank the user.'
   }
 }
