@@ -5,6 +5,15 @@
 This was originally made to moderate the DevCord Discord community, but you
 don't need to be a developer to use it.
 
+# Project Outdated and Unsupported!
+> devmod v4 is now deprecated!
+
+The current version of devmod is available at [redxtech/devmod](/redxtech/devmod).
+This version of devmod is now unsupported. The current version has all of the same
+features and more, all while running faster and having cleaner code. There isn't a
+situation that I would recommend using this version instead of the newest version,
+so all issues opened here will just be closed with this explaination.
+
 ## Setup
 
 ### Step 1 - Creating the Bot User
